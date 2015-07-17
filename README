@@ -1,4 +1,12 @@
-Welcome to MKBtt!
+Welcome to mkbTT!
+
+mkbTT is a Knuth-Bendix completion tool: given a set of input equalities, it 
+tries to generate a confluent and terminating rewrite system that can decide 
+the equational theory. mkbTT differs from traditional tools in two respects:
+(1) instead of requiring a reduction order as input, it employs modern 
+termination tools, and (2) mkbTT uses multi-completion to keep track of 
+multiple possible orientations in parallel. 
+For details, please see http://cl-informatik.uibk.ac.at/mkbtt/.
 
 ----------------------------------------------------------------------
                                 COMPILATION
@@ -31,7 +39,7 @@ To run MKBtt, you may e.g. type
 ----------------------------------------------------------------------
 
 The following paragraphs describe the command-line interface of mkbTT. 
-The comman
+The command
  ./mkbtt <file> <options> 
 calls mkbTT on a given file. Supported formats for input problems are
 
