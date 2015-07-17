@@ -1,0 +1,11 @@
+/*Copyright 2008 
+ Martin Korp, Christian Sternagel, Sarah Winkler, Harald Zankl */
+/* GNU Lesser General Public License */
+typedef [abstract] void * solver;
+
+solver get_solver();
+void delete_solver(solver s);
+void add(solver s, int clause[], int len);
+int is_satisfiable_aux(solver s);
+int is_sat(solver s);
+int val_of (solver s, int i);

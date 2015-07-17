@@ -1,0 +1,77 @@
+/* Copyright 2008 Martin Korp, Christian Sternagel, Harald Zankl
+ * GNU Lesser General Public License
+ *
+ * This file is part of TTT2.
+ * 
+ * TTT2 is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
+ * 
+ * TTT2 is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+ * License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with TTT2. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+typedef [abstract] void * yices_context;
+typedef [abstract] void * yices_expr;
+typedef [abstract] void * yices_model;
+typedef [abstract] void * yices_type;
+typedef [abstract] void * yices_var_decl;
+
+/* create and delete context */
+yices_context yices_mk_context();
+void yices_del_context(yices_context c);
+
+/* types, variables */
+yices_type yices_mk_type(yices_context ctx, [in,string] char *name);
+yices_type yices_mk_function_type(yices_context ctx, yices_type domain[],
+int domain_size, yices_type range);
+yices_var_decl yices_mk_var_decl(yices_context ctx, [in,string] char *name, yices_type ty);
+yices_expr yices_mk_var_from_decl(yices_context ctx, yices_var_decl d);
+
+/* assert, check, model, etc */
+void yices_assert(yices_context c, yices_expr e);
+int yices_check_aux(yices_context c);
+void yices_dump_context(yices_context ctx);
+
+yices_model yices_get_model (yices_context ctx);
+void yices_display_model(yices_model m);
+int yices_get_int_value(yices_model m, yices_var_decl x,[ref] long *val);
+int yices_get_value(yices_model m, yices_var_decl x);
+
+/* comparisons */
+yices_expr yices_mk_eq(yices_context c, yices_expr e1, yices_expr e2);
+yices_expr yices_mk_ge(yices_context c, yices_expr e1, yices_expr e2);
+yices_expr yices_mk_gt(yices_context c, yices_expr e1, yices_expr e2);
+yices_expr yices_mk_ite(yices_context c, yices_expr i, yices_expr t, yices_expr e);
+
+/* boolean operators */
+yices_expr yices_mk_false(yices_context c);
+yices_expr yices_mk_true(yices_context c);
+yices_expr yices_mk_and(yices_context c, yices_expr args[], int n);
+yices_expr yices_mk_or(yices_context c, yices_expr args[], int n);
+yices_expr yices_mk_not(yices_context c, yices_expr a);
+
+/* function application */
+yices_expr yices_mk_app(yices_context c, yices_expr f, yices_expr args[],
+int n);
+
+/* arithmetic */
+yices_expr yices_mk_sum(yices_context ctx, yices_expr args[], int n);
+yices_expr yices_mk_sub(yices_context ctx, yices_expr args[], int n);
+yices_expr yices_mk_mul(yices_context ctx, yices_expr args[], int n);
+yices_expr yices_mk_num(yices_context ctx, int n);
+yices_expr yices_mk_num_from_string(yices_context ctx, char string[]);
+yices_expr yices_mk_le(yices_context ctx, yices_expr a1, yices_expr a2);
+
+/* helper functions */
+int helper_get_int_value(yices_model m, yices_var_decl x);
+int helper_get_value(yices_model m, yices_var_decl x);
+int helper_get_num_value(yices_model m, yices_var_decl x);
+int helper_get_dnum_value(yices_model m, yices_var_decl x);
+void yices_enable_type_checker (int flag);

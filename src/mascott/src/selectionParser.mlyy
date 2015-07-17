@@ -1,0 +1,70 @@
+%{
+(* parser for selection strategy *)
+module SS = SelectionStrategy;;
+%}
+%token SIZE_MAX
+%token SIZE_SUM
+%token SUM
+%token MIN
+%token CP
+%token DATA
+%token ELABEL
+%token <string> FLOAT
+%token RANDOM
+%token COUNT
+%token PLUS
+%token MINUS
+%token TIMESTAMP
+%token E
+%token R
+%token C
+%token LPAREN
+%token RPAREN
+%token COMMA
+%token EOF
+
+%start start
+%type <SelectionStrategy.t> start
+
+%%
+start:
+ strategy EOF { $1 }
+
+strategy:
+   RANDOM {SS.Random}
+ | LPAREN node COMMA strategy RPAREN {SS.Property($2, $4)}
+ | FLOAT LPAREN strategy COMMA strategy RPAREN {
+  let f = float_of_string $1 in
+  SS.Probability($1, $3, $5)}
+
+node:
+   TIMESTAMP {SS.Age}
+ | DATA LPAREN term_pair RPAREN {SS.DataProperty $3}
+ | node PLUS node {SS.Plus($1, $3)}
+ | MINUS node {SS.Negative $2}
+ | ELABEL LPAREN process_set RPAREN {SS.ELabel $3} 
+
+process_set:
+   MIN LPAREN process RPAREN {SS.PMin $3}
+ | SUM LPAREN process RPAREN {SS.PSsum $3}
+ | COUNT {SS.Cardinal}
+
+process:
+   process PLUS process {SS.PPlus($1, $3)}
+ | E LPAREN equations RPAREN {SS.EProjection $3}
+ | R LPAREN trs RPAREN {SS.RProjection $3}
+ | C LPAREN trs RPAREN {SS.CProjection $3}
+
+trs:
+   SUM LPAREN term_pair RPAREN {SS.TSum $3}
+ | CP LPAREN equations RPAREN {SS.CPs $3}
+ | COUNT {SS.Cardinal}
+
+equations:
+   SUM LPAREN term_pair RPAREN {SS.ESum $3}
+ | COUNT {SS.Cardinal}
+
+term_pair:
+   SIZE_MAX {SS.MaxSize}
+ | SIZE_SUM {SS.SumSize} 
+
