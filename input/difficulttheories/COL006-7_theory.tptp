@@ -1,0 +1,6 @@
+cnf(s_definition, axiom, ( apply(apply(apply(s,X),Y),Z) = apply(apply(X,Z),apply(Y,Z)) )).
+
+cnf(k_definition, axiom, ( apply(apply(k,X),Y) = X )).
+
+cnf(strong_fixed_point, axiom, ( strong_fixed_point = apply(apply(s,apply(k,apply(apply(apply(s,s),apply(apply(s,k),k)),apply(apply(s,s),apply(s,k))))),apply(apply(s,apply(k,s)),k)) )).
+

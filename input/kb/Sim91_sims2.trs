@@ -1,0 +1,12 @@
+(VAR x)
+(RULES
+ T(t(x)) -> x
+ t(T(x)) -> x
+ S(s(x)) -> x
+ s(S(x)) -> x
+ R(r(x)) -> x
+ r(R(x)) -> x
+ t(t(S(T(s(T(r(t(R(R(S(t(s(T(T(r(r(T(R(t(r(r(T(R(t(x))))))))))))))))))))))))) -> x
+ r(r(T(R(t(R(s(r(S(S(T(r(t(R(R(s(s(R(S(r(s(s(R(S(r(x))))))))))))))))))))))))) -> x
+ s(s(R(S(r(S(t(s(T(T(R(s(r(S(S(t(t(S(T(s(t(t(S(T(s(x))))))))))))))))))))))))) -> x
+)

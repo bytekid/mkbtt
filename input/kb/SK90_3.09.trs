@@ -1,0 +1,29 @@
+(VAR x y z)
+(RULES
+f(f(x, y), z) -> f(x, f(y, z))
+f(a1, y) -> y
+f(a2, y) -> y
+f(a3, y) -> y
+f(a4, y) -> y
+f(a5, y) -> y
+f(a6, y) -> y
+f(a7, y) -> y
+f(a8, y) -> y
+f(a9, y) -> y
+f(a10, y) -> y
+f(a11, y) -> y
+f(a12, y) -> y
+f(x, i1(x)) -> a1
+f(x, i2(x)) -> a2
+f(x, i3(x)) -> a3
+f(x, i4(x)) -> a4
+f(x, i5(x)) -> a5
+f(x, i6(x)) -> a6
+f(x, i7(x)) -> a7
+f(x, i8(x)) -> a8
+f(x, i9(x)) -> a9
+f(x, i10(x)) -> a10
+f(x, i11(x)) -> a11
+f(x, i12(x)) -> a12
+)
+(COMMENT Example 3.9 in \cite{SK90})

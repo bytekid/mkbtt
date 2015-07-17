@@ -1,0 +1,33 @@
+%--------------------------------------------------------------------------
+% File     : SYN305-1 : TPTP v3.6.0. Released v1.2.0.
+% Domain   : Syntactic
+% Problem  : Problem for testing satisfiability
+% Version  : Especial.
+% English  : 
+
+% Refs     : [BCP94] Bourely et al. (1994), A Method for Building Models Au
+% Source   : [BCP94]
+% Names    : Example 3 [BCP94]
+
+% Status   : Satisfiable
+% Rating   : 0.67 v2.4.0, 0.33 v2.2.1, 0.25 v2.2.0, 0.67 v2.1.0, 0.00 v2.0.0
+% Syntax   : Number of clauses     :    3 (   0 non-Horn;   3 unit;   1 RR)
+%            Number of atoms       :    3 (   3 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    3 (   0 constant; 1-1 arity)
+%            Number of variables   :    3 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+cnf(clause1,negated_conjecture,
+    ( f(g1(X)) = X )).
+
+cnf(clause2,negated_conjecture,
+    ( f(g2(X)) = X )).
+
+cnf(clause3,negated_conjecture,
+    (  g1(X) != g2(X) )).
+
+%--------------------------------------------------------------------------

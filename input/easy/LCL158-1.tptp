@@ -1,0 +1,36 @@
+%--------------------------------------------------------------------------
+% File     : LCL158-1 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Logic Calculi (Wajsberg Algebra)
+% Problem  : The 6th alternative Wajsberg algebra axiom
+% Version  : [Bon91] (equality) axioms.
+% English  : 
+
+% Refs     : [FRT84] Font et al. (1984), Wajsberg Algebras
+%          : [AB90]  Anantharaman & Bonacina (1990), An Application of the 
+%          : [Bon91] Bonacina (1991), Problems in Lukasiewicz Logic
+% Source   : [Bon91]
+% Names    : W' axiom 6 [Bon91]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.38 v2.0.0
+% Syntax   : Number of clauses     :   17 (   0 non-Horn;  17 unit;   2 RR)
+%            Number of atoms       :   17 (  17 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    9 (   3 constant; 0-2 arity)
+%            Number of variables   :   33 (   0 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Wajsberg algebra axioms 
+include('Axioms/LCL001-0.ax').
+%----Include Wajsberg algebra and and or definitions 
+include('Axioms/LCL001-2.ax').
+%----Include Alternative Wajsberg algebra definitions 
+include('Axioms/LCL002-1.ax').
+%--------------------------------------------------------------------------
+cnf(prove_alternative_wajsberg_axiom,negated_conjecture,
+    (  and_star(xor(truth,x),x) != falsehood )).
+
+%--------------------------------------------------------------------------

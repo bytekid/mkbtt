@@ -1,0 +1,10 @@
+cnf(p23_1, hypothesis, ( inverse(identity) = identity )).
+
+cnf(p23_2, hypothesis, ( inverse(inverse(X)) = X )).
+
+cnf(p23_3, hypothesis, ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

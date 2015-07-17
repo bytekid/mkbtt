@@ -1,0 +1,52 @@
+%--------------------------------------------------------------------------
+% File     : LCL164-1 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Logic Calculi (Wajsberg Algebra)
+% Problem  : The 4th Wajsberg algebra axiom, from the alternative axioms
+% Version  : [Bon91] (equality) axioms.
+% English  : 
+
+% Refs     : [FRT84] Font et al. (1984), Wajsberg Algebras
+%          : [AB90]  Anantharaman & Bonacina (1990), An Application of the 
+%          : [Bon91] Bonacina (1991), Problems in Lukasiewicz Logic
+% Source   : [Bon91]
+% Names    : W axiom 4 [Bon91]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.38 v2.0.0
+% Syntax   : Number of clauses     :   14 (   0 non-Horn;  14 unit;   2 RR)
+%            Number of atoms       :   14 (  14 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    8 (   4 constant; 0-2 arity)
+%            Number of variables   :   19 (   1 singleton)
+%            Maximal term depth    :    5 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Alternative Wajsberg algebra axioms 
+include('Axioms/LCL002-0.ax').
+%--------------------------------------------------------------------------
+%----Include some Alternative Wajsberg algebra definitions 
+% include('Axioms/LCL002-1.ax').
+%----Definition that and_star is AC and xor is C 
+cnf(xor_commutativity,axiom,
+    ( xor(X,Y) = xor(Y,X) )).
+
+cnf(and_star_associativity,axiom,
+    ( and_star(and_star(X,Y),Z) = and_star(X,and_star(Y,Z)) )).
+
+cnf(and_star_commutativity,axiom,
+    ( and_star(X,Y) = and_star(Y,X) )).
+
+%----Definition of false in terms of true 
+cnf(false_definition,axiom,
+    ( not(truth) = falsehood )).
+
+%----Include the definition of implies in terms of xor and and_star 
+cnf(implies_definition,axiom,
+    ( implies(X,Y) = xor(truth,and_star(X,xor(truth,Y))) )).
+
+cnf(prove_wajsberg_axiom,negated_conjecture,
+    (  implies(implies(not(x),not(y)),implies(y,x)) != truth )).
+
+%--------------------------------------------------------------------------

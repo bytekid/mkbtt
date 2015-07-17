@@ -1,0 +1,20 @@
+(VAR x)
+(RULES
+ f(a, f(b, f(c, x))) -> f(d, x)
+ f(b, f(c, f(d, x))) -> f(e, x)
+ f(c, f(d, f(e, x))) -> f(a, x)
+ f(d, f(e, f(a, x))) -> f(b, x)
+ f(e, f(a, f(b, x))) -> f(c, x)
+ f(a, f(a1, x)) -> x
+ f(a1, f(a, x)) -> x
+ f(b, f(b1, x)) -> x
+ f(b1, f(b, x)) -> x
+ f(c, f(c1, x)) -> x
+ f(c1, f(c, x)) -> x
+ f(d, f(d1, x)) -> x
+ f(d1, f(d, x)) -> x
+ f(e, f(e1, x)) -> x
+ f(e1, f(e, x)) -> x
+)
+(COMMENT example Z22W from
+Bündgen et al: A fine grained parallel completion procedure)

@@ -1,0 +1,14 @@
+cnf(kestrel_exists, axiom, ( response(response(kestrel,X1),X2) = X1 )).
+
+cnf(lark_exists, axiom, ( response(response(lark,X1),X2) = response(X1,response(X2,X2)) )).
+
+cnf(lark_lemma1, axiom, ( response(response(response(lark,lark),X1),X2) = response(response(X1,X1),response(X2,X2)) )).
+
+cnf(lark_lemma2, axiom, ( response(response(response(response(lark,lark),lark),X1),X2) = response(response(response(X1,X1),response(X1,X1)),response(x2,x2)) )).
+
+cnf(lark_not_egocentric, axiom, (  response(l2,l2) != l2 )).
+
+cnf(l2_definition, axiom, ( response(lark,lark) = l2 )).
+
+cnf(l3_definition, axiom, ( response(l2,lark) = l3 )).
+

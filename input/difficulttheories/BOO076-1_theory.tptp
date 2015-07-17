@@ -1,0 +1,2 @@
+cnf(sh_1, axiom, ( nand(nand(A,nand(nand(B,A),A)),nand(B,nand(C,A))) = B )).
+

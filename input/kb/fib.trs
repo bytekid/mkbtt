@@ -1,0 +1,13 @@
+(VAR x y z)
+(RULES
+p(x,0()) -> x
+p(x,s(y)) -> s(p(x,y))
+f(0()) -> 0()
+f(s(0())) -> s(0())
+f(s(s(z))) -> p(f(s(z)),f(z))
+g(0()) -> b(s(0()),0())
+g(s(z)) -> n(g(z))
+n(b(x,y)) -> b(p(x,y),x)
+u(b(x,y)) -> p(x,y)
+g(x) -> b(f(s(x)),f(x))
+)

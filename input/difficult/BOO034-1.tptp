@@ -1,0 +1,33 @@
+%--------------------------------------------------------------------------
+% File     : BOO034-1 : TPTP v3.6.0. Released v2.2.0.
+% Domain   : Boolean Algebra (Ternary)
+% Problem  : Ternary Boolean Algebra Single axiom is sound.
+% Version  : [MP96] (equality) axioms.
+% English  : We show that that an equation (which turns out to be a single
+%            axiom for TBA) can be derived from the axioms of TBA.
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+% Source   : [McC98]
+% Names    : TBA-1-a [MP96]
+
+% Status   : Unsatisfiable
+% Rating   : 0.44 v3.4.0, 0.50 v3.3.0, 0.29 v3.2.0, 0.21 v3.1.0, 0.11 v2.7.0, 0.27 v2.6.0, 0.33 v2.5.0, 0.00 v2.2.1
+% Syntax   : Number of clauses     :    6 (   0 non-Horn;   6 unit;   1 RR)
+%            Number of atoms       :    6 (   6 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    9 (   7 constant; 0-3 arity)
+%            Number of variables   :   13 (   2 singleton)
+%            Maximal term depth    :    5 (   2 average)
+
+% Comments :
+%--------------------------------------------------------------------------
+%----Include ternary Boolean algebra axioms
+include('Axioms/BOO001-0.ax').
+%--------------------------------------------------------------------------
+%----Denial of single axiom:
+cnf(prove_single_axiom,negated_conjecture,
+    (  multiply(multiply(a,inverse(a),b),inverse(multiply(multiply(c,d,e),f,multiply(c,d,g))),multiply(d,multiply(g,f,e),c)) != b )).
+
+%--------------------------------------------------------------------------

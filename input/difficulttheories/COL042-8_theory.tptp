@@ -1,0 +1,6 @@
+cnf(b_definition, axiom, ( apply(apply(apply(b,X),Y),Z) = apply(X,apply(Y,Z)) )).
+
+cnf(w1_definition, axiom, ( apply(apply(w1,X),Y) = apply(apply(Y,X),X) )).
+
+cnf(strong_fixed_point, axiom, ( strong_fixed_point = apply(apply(b,apply(apply(b,apply(w1,w1)),apply(apply(b,apply(b,w1)),b))),b) )).
+

@@ -1,0 +1,4 @@
+cnf(double_negation, hypothesis, ( negate(negate(X)) = X )).
+
+include('Axioms/ROB001-0.ax').
+

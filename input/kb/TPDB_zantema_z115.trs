@@ -1,0 +1,9 @@
+(VAR x )
+(RULES
+a(a(x)) -> d(c(x))
+a(b(x)) -> c(c(c(x)))
+b(b(x))  -> a(c(c(x)))
+c(c(x))  -> b(x)
+c(d(x))  -> a(a(x))
+d(d(x))  -> b(a(c(x)))
+ )

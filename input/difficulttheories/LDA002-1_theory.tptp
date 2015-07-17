@@ -1,0 +1,22 @@
+cnf(a1, axiom, ( f(X,f(Y,Z)) = f(f(X,Y),f(X,Z)) )).
+
+cnf(clause_2, axiom, ( n2 = f(n1,n1) )).
+
+cnf(clause_3, axiom, ( n3 = f(n2,n1) )).
+
+cnf(clause_4, axiom, ( u = f(n2,n2) )).
+
+cnf(clause_5, axiom, ( u1 = f(u,n1) )).
+
+cnf(clause_6, axiom, ( u2 = f(u,n2) )).
+
+cnf(clause_7, axiom, ( u3 = f(u,n3) )).
+
+cnf(clause_8, axiom, ( uu = f(u,u) )).
+
+cnf(clause_9, axiom, ( a = f(f(n3,n2),u2) )).
+
+cnf(clause_10, axiom, ( b = f(u1,u3) )).
+
+cnf(clause_11, axiom, ( v = f(uu,uu) )).
+

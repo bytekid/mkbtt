@@ -1,0 +1,36 @@
+%--------------------------------------------------------------------------
+% File     : GRP164-2 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Group Theory (Lattice Ordered)
+% Problem  : The lattice of each LOG is distributive
+% Version  : [Fuc94] (equality) axioms.
+%            Theorem formulation : Dual.
+% English  : 
+
+% Refs     : [Fuc94] Fuchs (1994), The Application of Goal-Orientated Heuri
+%          : [Sch95] Schulz (1995), Explanation Based Learning for Distribu
+% Source   : [Sch95]
+% Names    : distrun [Sch95] 
+
+% Status   : Unsatisfiable
+% Rating   : 0.89 v3.4.0, 0.88 v3.3.0, 0.93 v3.1.0, 0.89 v2.7.0, 0.91 v2.6.0, 0.83 v2.5.0, 0.75 v2.4.0, 0.67 v2.2.1, 1.00 v2.0.0
+% Syntax   : Number of clauses     :   16 (   0 non-Horn;  16 unit;   1 RR)
+%            Number of atoms       :   16 (  16 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    8 (   4 constant; 0-2 arity)
+%            Number of variables   :   33 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : ORDERING LPO inverse > product > greatest_lower_bound >
+%            least_upper_bound > identity > a > b > c
+% Bugfixes : v1.2.1 - Duplicate axioms in GRP004-2.ax removed.
+%--------------------------------------------------------------------------
+%----Include equality group theory axioms 
+include('Axioms/GRP004-0.ax').
+%----Include Lattice ordered group (equality) axioms
+include('Axioms/GRP004-2.ax').
+%--------------------------------------------------------------------------
+cnf(prove_distrun,negated_conjecture,
+    (  greatest_lower_bound(a,least_upper_bound(b,c)) != least_upper_bound(greatest_lower_bound(a,b),greatest_lower_bound(a,c)) )).
+
+%--------------------------------------------------------------------------

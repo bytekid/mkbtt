@@ -1,0 +1,33 @@
+%------------------------------------------------------------------------------
+% File     : LAT146-1 : TPTP v3.6.0. Released v3.1.0.
+% Domain   : Lattice Theory
+% Problem  : Huntington equation H34 implies H28
+% Version  : [McC05] (equality) axioms : Especial.
+% English  : 
+
+% Refs     : [McC05] McCune (2005), Email to Geoff Sutcliffe
+% Source   : [McC05]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.56 v3.4.0, 0.62 v3.3.0, 0.79 v3.1.0
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   4 constant; 0-2 arity)
+%            Number of variables   :   20 (   2 singleton)
+%            Maximal term depth    :    7 (   3 average)
+
+% Comments : 
+%------------------------------------------------------------------------------
+%----Include Lattice theory (equality) axioms
+include('Axioms/LAT001-0.ax').
+%------------------------------------------------------------------------------
+cnf(equation_H34,axiom,
+    ( meet(X,join(Y,meet(Z,U))) = meet(X,join(Y,meet(Z,join(Y,meet(U,join(Y,Z)))))) )).
+
+cnf(prove_H28,negated_conjecture,
+    (  meet(a,join(b,meet(a,meet(c,d)))) != meet(a,join(b,meet(c,meet(d,join(a,meet(b,d)))))) )).
+
+%------------------------------------------------------------------------------

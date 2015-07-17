@@ -1,0 +1,2 @@
+cnf(single_non_axiom, axiom, ( multiply(U,inverse(multiply(Y,multiply(multiply(multiply(Z,inverse(Z)),inverse(multiply(U,Y))),U)))) = U )).
+

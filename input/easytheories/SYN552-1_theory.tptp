@@ -1,0 +1,4 @@
+cnf(c1, axiom, ( g(X1) = g(X2) )).
+
+cnf(c2, axiom, (  f(g(b),b) != f(g(a),a) )).
+

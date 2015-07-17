@@ -1,0 +1,14 @@
+cnf(p12_1, hypothesis, ( inverse(identity) = identity )).
+
+cnf(p12_2, hypothesis, ( inverse(inverse(X)) = X )).
+
+cnf(p12_3, hypothesis, ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+cnf(p12_4, hypothesis, ( greatest_lower_bound(a,c) = greatest_lower_bound(b,c) )).
+
+cnf(p12_5, hypothesis, ( least_upper_bound(a,c) = least_upper_bound(b,c) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

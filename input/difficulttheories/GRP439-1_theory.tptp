@@ -1,0 +1,2 @@
+cnf(single_axiom, axiom, ( inverse(multiply(A,multiply(B,multiply(multiply(inverse(B),C),inverse(multiply(D,multiply(A,C))))))) = D )).
+

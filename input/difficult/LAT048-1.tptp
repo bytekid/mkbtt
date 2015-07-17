@@ -1,0 +1,53 @@
+%--------------------------------------------------------------------------
+% File     : LAT048-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Lattice Theory
+% Problem  : Weakly orthomodular lattice is not orthomodular lattice
+% Version  : [McC88] (equality) axioms.
+% English  : 
+
+% Refs     : [McC88] McCune (1988), Challenge Equality Problems in Lattice 
+%          : [RW01]  Rose & Wilkinson (2001), Application of Model Search
+% Source   : [RW01]
+% Names    : mace-c.in [RW01]
+
+% Status   : Satisfiable
+% Rating   : 0.33 v2.6.0, 0.67 v2.5.0
+% Syntax   : Number of clauses     :   15 (   0 non-Horn;  15 unit;   1 RR)
+%            Number of atoms       :   15 (  15 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   25 (   2 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include lattice axioms 
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+%----Compatibility (6)
+cnf(compatibility1,axiom,
+    ( complement(join(X,Y)) = meet(complement(X),complement(Y)) )).
+
+cnf(compatibility2,axiom,
+    ( complement(meet(X,Y)) = join(complement(X),complement(Y)) )).
+
+%----Invertability (5)
+cnf(invertability1,axiom,
+    ( join(complement(X),X) = n1 )).
+
+cnf(invertability2,axiom,
+    ( meet(complement(X),X) = n0 )).
+
+cnf(invertability3,axiom,
+    ( complement(complement(X)) = X )).
+
+%----Weak orthomodular law (10)
+cnf(weak_orthomodular_law,hypothesis,
+    ( join(meet(complement(X),join(X,Y)),join(complement(Y),meet(X,Y))) = n1 )).
+
+%----Denial of orthomodular law (8)
+cnf(prove_orthomodular_law,negated_conjecture,
+    (  join(a,meet(complement(a),join(a,b))) != join(a,b) )).
+
+%--------------------------------------------------------------------------

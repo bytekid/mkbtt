@@ -1,0 +1,9 @@
+(VAR x y z)
+(RULES
+multiply(x,identity) -> x
+multiply(x,inverse(x)) -> identity
+multiply(identity,x) -> x
+multiply(inverse(x),x) -> identity
+multiply(multiply(x,y),z) -> multiply(x,multiply(y,z))
+)
+

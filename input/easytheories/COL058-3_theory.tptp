@@ -1,0 +1,2 @@
+cnf(lark_exists, axiom, ( response(response(lark,X1),X2) = response(X1,response(X2,X2)) )).
+

@@ -1,0 +1,26 @@
+%--------------------------------------------------------------------------
+% File     : RNG043-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Ring Theory (Alternative)
+% Problem  : Alternative ring theory (equality) axioms
+% Version  : [Ste87] (equality) axioms.
+% English  : 
+
+% Refs     : [Ste87] Stevens (1987), Some Experiments in Nonassociative Rin
+% Source   : [Ste87]
+% Names    : 
+
+% Status   : Satisfiable
+% Rating   : 0.00 v3.2.0, 0.33 v3.1.0, 0.00 v2.5.0
+% Syntax   : Number of clauses     :   15 (   0 non-Horn;  15 unit;   0 RR)
+%            Number of atoms       :   15 (  15 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   1 constant; 0-3 arity)
+%            Number of variables   :   27 (   2 singleton)
+%            Maximal term depth    :    5 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Alternative ring theory (equality) axioms
+include('Axioms/RNG003-0.ax').
+%--------------------------------------------------------------------------

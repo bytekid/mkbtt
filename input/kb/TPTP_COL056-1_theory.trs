@@ -1,0 +1,7 @@
+(VAR x y w)
+(RULES
+response(compose(x,y),w) -> response(x,response(y,w))
+response(a,b) -> c
+response(a,c) -> b
+)
+

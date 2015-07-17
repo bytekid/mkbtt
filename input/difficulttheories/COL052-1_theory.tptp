@@ -1,0 +1,6 @@
+cnf(composer_exists, axiom, ( response(compose(X,Y),W) = response(X,response(Y,W)) )).
+
+cnf(agreeable1, hypothesis, ( response(c,common_bird(X)) = response(X,common_bird(X)) )).
+
+cnf(c_composes_a_with_b, hypothesis, ( c = compose(a,b) )).
+

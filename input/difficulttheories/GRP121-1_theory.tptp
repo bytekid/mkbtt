@@ -1,0 +1,4 @@
+cnf(single_axiom, axiom, ( multiply(Y,multiply(multiply(Y,multiply(multiply(Y,Y),multiply(X,Z))),multiply(Z,multiply(Z,Z)))) = X )).
+
+cnf(single_axiom2, axiom, ( multiply(identity,identity) = identity )).
+

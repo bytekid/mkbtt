@@ -1,0 +1,47 @@
+%--------------------------------------------------------------------------
+% File     : GRP182-1 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Group Theory (Lattice Ordered)
+% Problem  : Positive part of the negative part is identity
+% Version  : [Fuc94] (equality) axioms.
+% English  : 
+
+% Refs     : [Fuc94] Fuchs (1994), The Application of Goal-Orientated Heuri
+%          : [Sch95] Schulz (1995), Explanation Based Learning for Distribu
+%          : [Dah95] Dahn (1995), Email to G. Sutcliffe
+% Source   : [TPTP]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.0.0
+% Syntax   : Number of clauses     :   16 (   0 non-Horn;  16 unit;   1 RR)
+%            Number of atoms       :   16 (  16 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   2 constant; 0-2 arity)
+%            Number of variables   :   33 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : ORDERING LPO inverse > product > greatest_lower_bound >
+%            least_upper_bound > identity > a
+%          : ORDERING LPO greatest_lower_bound > least_upper_bound > 
+%            inverse > product > identity > a
+%          : This is a standardized version of the problem that appears in
+%            [Sch95].
+%          : The theorem clause has been modified according to instructions
+%            in [Dah95].
+% Bugfixes : v1.2.1 - Duplicate axioms in GRP004-2.ax removed.
+%--------------------------------------------------------------------------
+%----Include equality group theory axioms 
+include('Axioms/GRP004-0.ax').
+%----Include Lattice ordered group (equality) axioms
+include('Axioms/GRP004-2.ax').
+%--------------------------------------------------------------------------
+%----This is Schulz's clause
+%input_clause(prove_p17a,negated_conjecture,
+%    [--equal(least_upper_bound(identity,least_upper_bound(a,identity)),
+%least_upper_bound(a,identity))]).
+%----This is Dahn's clause
+cnf(prove_p17a,negated_conjecture,
+    (  least_upper_bound(identity,greatest_lower_bound(a,identity)) != identity )).
+
+%--------------------------------------------------------------------------

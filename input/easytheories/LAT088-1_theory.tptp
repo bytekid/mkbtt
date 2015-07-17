@@ -1,0 +1,10 @@
+cnf(wal_absorbtion_1, axiom, ( join(meet(A,B),meet(A,join(A,B))) = A )).
+
+cnf(wal_absorbtion_2, axiom, ( join(meet(A,A),meet(B,join(A,A))) = A )).
+
+cnf(wal_absorbtion_3, axiom, ( join(meet(A,B),meet(B,join(A,B))) = B )).
+
+cnf(wal_absorbtion_4, axiom, ( meet(meet(join(A,B),join(C,A)),A) = A )).
+
+cnf(wal_absorbtion_5, axiom, ( join(join(meet(A,B),meet(C,A)),A) = A )).
+

@@ -1,0 +1,14 @@
+cnf(p8_9a_1, hypothesis, ( least_upper_bound(identity,a) = a )).
+
+cnf(p8_9a_2, hypothesis, ( least_upper_bound(identity,b) = b )).
+
+cnf(p8_9a_3, hypothesis, ( least_upper_bound(identity,c) = c )).
+
+cnf(p8_9a_4, hypothesis, ( greatest_lower_bound(a,b) = identity )).
+
+cnf(p8_9a_5, hypothesis, ( least_upper_bound(greatest_lower_bound(a,multiply(b,c)),multiply(greatest_lower_bound(a,b),greatest_lower_bound(a,c))) = multiply(greatest_lower_bound(a,b),greatest_lower_bound(a,c)) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

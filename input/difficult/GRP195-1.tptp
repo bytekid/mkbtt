@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : GRP195-1 : TPTP v3.6.0. Released v2.2.0.
+% Domain   : Group Theory (Semigroups)
+% Problem  : In semigroups, xyy=yyx -> (uv)^4 = u^4v^4.
+% Version  : [MP96] (equality) axioms.
+% English  : In semigroups, xyy=yyx -> uvuvuvuuv=uuuuvvvv.
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+% Source   : [McC98]
+% Names    : CS-2 [MP96]
+
+% Status   : Unsatisfiable
+% Rating   : 0.11 v3.4.0, 0.12 v3.3.0, 0.00 v2.7.0, 0.09 v2.6.0, 0.17 v2.5.0, 0.00 v2.4.0, 0.00 v2.2.1
+% Syntax   : Number of clauses     :    3 (   0 non-Horn;   3 unit;   1 RR)
+%            Number of atoms       :    3 (   3 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    3 (   2 constant; 0-2 arity)
+%            Number of variables   :    5 (   0 singleton)
+%            Maximal term depth    :    8 (   5 average)
+
+% Comments : The problem was originally posed for cancellative semigroups,
+%            but Otter discovered that cancellation is not necessary.
+%--------------------------------------------------------------------------
+%----Include semigroups axioms
+include('Axioms/GRP008-0.ax').
+%--------------------------------------------------------------------------
+%----Hypothesis:
+cnf(condition,hypothesis,
+    ( multiply(X,multiply(Y,Y)) = multiply(Y,multiply(Y,X)) )).
+
+%----Denial of conclusion:
+cnf(prove_this,negated_conjecture,
+    (  multiply(a,multiply(b,multiply(a,multiply(b,multiply(a,multiply(b,multiply(a,b))))))) != multiply(a,multiply(a,multiply(a,multiply(a,multiply(b,multiply(b,multiply(b,b))))))) )).
+
+%--------------------------------------------------------------------------

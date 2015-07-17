@@ -1,0 +1,4 @@
+cnf(single_axiom, axiom, ( divide(inverse(divide(divide(divide(A,A),B),divide(C,divide(B,D)))),D) = C )).
+
+cnf(multiply, axiom, ( multiply(A,B) = divide(A,inverse(B)) )).
+

@@ -1,0 +1,14 @@
+cnf(a1, axiom, ( f(X,f(Y,Z)) = f(f(X,Y),f(X,Z)) )).
+
+cnf(clause_1, axiom, ( tt = f(t,t) )).
+
+cnf(clause_2, axiom, ( ts = f(t,s) )).
+
+cnf(clause_3, axiom, ( tt_ts = f(tt,ts) )).
+
+cnf(clause_4, axiom, ( tk = f(t,k) )).
+
+cnf(clause_5, axiom, ( tsk = f(ts,k) )).
+
+include('Axioms/LDA001-0.ax').
+

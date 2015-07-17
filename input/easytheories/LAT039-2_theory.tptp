@@ -1,0 +1,8 @@
+cnf(dist_join, hypothesis, ( join(X,meet(Y,Z)) = meet(join(X,Y),join(X,Z)) )).
+
+cnf(dist_meet, hypothesis, ( meet(X,join(Y,Z)) = join(meet(X,Y),meet(X,Z)) )).
+
+cnf(lhs, hypothesis, ( join(xx,yy) = yy )).
+
+include('Axioms/LAT001-0.ax').
+

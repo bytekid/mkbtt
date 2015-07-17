@@ -1,0 +1,6 @@
+cnf(b_a_multiplicative_identity, hypothesis, ( add(a,b) = multiplicative_identity )).
+
+cnf(b_an_additive_identity, hypothesis, ( multiply(a,b) = additive_identity )).
+
+include('Axioms/BOO004-0.ax').
+

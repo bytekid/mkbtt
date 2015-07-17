@@ -1,0 +1,37 @@
+%------------------------------------------------------------------------------
+% File     : SWV243-2 : TPTP v3.6.0. Released v3.2.0.
+% Domain   : Software Verification
+% Problem  : Cryptographic protocol problem for messages
+% Version  : [Pau06] axioms : Reduced > Especial.
+% English  :
+
+% Refs     : [Pau06] Paulson (2006), Email to G. Sutcliffe
+% Source   : [Pau06]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.11 v3.4.0, 0.12 v3.3.0, 0.07 v3.2.0
+% Syntax   : Number of clauses     :    3 (   0 non-Horn;   3 unit;   1 RR)
+%            Number of atoms       :    3 (   3 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   3 constant; 0-3 arity)
+%            Number of variables   :    4 (   1 singleton)
+%            Maximal term depth    :    4 (   3 average)
+
+% Comments : The problems in the [Pau06] collection each have very many axioms,
+%            of which only a small selection are required for the refutation.
+%            The mission is to find those few axioms, after which a refutation
+%            can be quite easily found. This version has only the necessary
+%            axioms.
+%------------------------------------------------------------------------------
+cnf(cls_conjecture_0,negated_conjecture,
+    ( c_Message_Oanalz(c_Message_Osynth(v_H)) != c_union(c_Message_Oanalz(v_H),c_Message_Osynth(v_H),tc_Message_Omsg) )).
+
+cnf(cls_Message_Oanalz__synth__Un_0,axiom,
+    ( c_Message_Oanalz(c_union(c_Message_Osynth(V_G),V_H,tc_Message_Omsg)) = c_union(c_Message_Oanalz(c_union(V_G,V_H,tc_Message_Omsg)),c_Message_Osynth(V_G),tc_Message_Omsg) )).
+
+cnf(cls_Set_OUn__empty__right_0,axiom,
+    ( c_union(V_y,c_emptyset,T_a) = V_y )).
+
+%------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+(VAR x y z)
+(RULES
+multiply(x,add(y,z)) -> add(multiply(y,x),multiply(z,x))
+add(x,inverse(x)) -> one
+add(multiply(x,inverse(x)),add(multiply(x,y),multiply(inverse(x),y))) -> y
+add(multiply(x,inverse(y)),add(multiply(x,y),multiply(inverse(y),y))) -> x 
+add(multiply(x,inverse(y)),add(multiply(x,x),multiply(inverse(y),x))) -> x
+)
+

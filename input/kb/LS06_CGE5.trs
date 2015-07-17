@@ -1,0 +1,22 @@
+(VAR x y z)
+(RULES
+*(one, x) -> x
+*(i(x), x) -> one
+*(*(x, y), z) -> *(x, *(y, z))
+f(*(x, y)) -> *(f(x), f(y))
+g(*(x, y)) -> *(g(x), g(y))
+h(*(x, y)) -> *(h(x), h(y))
+k(*(x, y)) -> *(k(x), k(y))
+j(*(x, y)) -> *(j(x), j(y))
+*(f(x), g(y)) -> *(g(y), f(x))
+*(f(x), h(y)) -> *(h(y), f(x))
+*(h(x), g(y)) -> *(g(y), h(x))
+*(f(x), k(y)) -> *(k(y), f(x))
+*(k(x), h(y)) -> *(h(y), k(x))
+*(k(x), g(y)) -> *(g(y), k(x))
+*(f(x), j(y)) -> *(j(y), f(x))
+*(g(x), j(y)) -> *(j(y), g(x))
+*(h(x), j(y)) -> *(j(y), h(x))
+*(k(x), j(y)) -> *(j(y), k(x))
+)
+(COMMENT Example CGE5 in \cite{WS06})

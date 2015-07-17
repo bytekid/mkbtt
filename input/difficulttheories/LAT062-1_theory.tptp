@@ -1,0 +1,8 @@
+cnf(top, axiom, ( join(complement(A),A) = n1 )).
+
+cnf(bottom, axiom, ( meet(complement(A),A) = n0 )).
+
+cnf(compatibility, axiom, ( meet(A,B) = complement(join(complement(A),complement(B))) )).
+
+include('Axioms/LAT001-0.ax').
+

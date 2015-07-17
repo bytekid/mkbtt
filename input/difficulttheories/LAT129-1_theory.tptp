@@ -1,0 +1,4 @@
+cnf(equation_H58_dual, axiom, ( join(X,meet(Y,Z)) = join(X,meet(Y,join(meet(X,Y),meet(Z,join(X,Y))))) )).
+
+include('Axioms/LAT001-0.ax').
+

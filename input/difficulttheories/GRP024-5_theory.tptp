@@ -1,0 +1,6 @@
+cnf(name, axiom, ( commutator(X,Y) = multiply(inverse(X),multiply(inverse(Y),multiply(X,Y))) )).
+
+cnf(associativity_of_commutator, hypothesis, ( commutator(commutator(X,Y),Z) = commutator(X,commutator(Y,Z)) )).
+
+include('Axioms/GRP004-0.ax').
+

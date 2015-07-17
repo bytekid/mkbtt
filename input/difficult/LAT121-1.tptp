@@ -1,0 +1,34 @@
+%------------------------------------------------------------------------------
+% File     : LAT121-1 : TPTP v3.6.0. Released v3.1.0.
+% Domain   : Lattice Theory
+% Problem  : Huntington equation H55 is independent of H18_dual
+% Version  : [McC05] (equality) axioms : Especial.
+% English  : Show that Huntington equation H18_dual does not imply Huntington 
+%            equation H55 in lattice theory.
+
+% Refs     : [McC05] McCune (2005), Email to Geoff Sutcliffe
+% Source   : [McC05]
+% Names    : 
+
+% Status   : Satisfiable
+% Rating   : 0.33 v3.2.0, 0.67 v3.1.0
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :   19 (   2 singleton)
+%            Maximal term depth    :    6 (   3 average)
+
+% Comments : 
+%------------------------------------------------------------------------------
+%----Include Lattice theory (equality) axioms
+include('Axioms/LAT001-0.ax').
+%------------------------------------------------------------------------------
+cnf(equation_H18_dual,axiom,
+    ( meet(join(X,Y),join(X,Z)) = join(X,meet(join(X,Y),meet(join(X,Z),join(Y,meet(X,Z))))) )).
+
+cnf(prove_H55,negated_conjecture,
+    (  join(a,meet(b,join(a,c))) != join(a,meet(b,join(c,meet(a,join(c,b))))) )).
+
+%------------------------------------------------------------------------------

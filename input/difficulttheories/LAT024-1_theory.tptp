@@ -1,0 +1,12 @@
+cnf(idempotence_of_meet2, axiom, ( meet2(X,X) = X )).
+
+cnf(commutativity_of_meet2, axiom, ( meet2(X,Y) = meet2(Y,X) )).
+
+cnf(associativity_of_meet2, axiom, ( meet2(meet2(X,Y),Z) = meet2(X,meet2(Y,Z)) )).
+
+cnf(quasi_lattice1_2, axiom, ( join(meet2(X,join(Y,Z)),meet2(X,Y)) = meet2(X,join(Y,Z)) )).
+
+cnf(quasi_lattice2_2, axiom, ( meet2(join(X,meet2(Y,Z)),join(X,Y)) = join(X,meet2(Y,Z)) )).
+
+include('Axioms/LAT004-0.ax').
+

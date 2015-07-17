@@ -1,0 +1,8 @@
+cnf(mckenzie1, axiom, ( join(X,meet(Y,meet(X,Z))) = X )).
+
+cnf(mckenzie2, axiom, ( meet(X,join(Y,join(X,Z))) = X )).
+
+cnf(mckenzie3, axiom, ( join(join(meet(X,Y),meet(Y,Z)),Y) = Y )).
+
+cnf(mckenzie4, axiom, ( meet(meet(join(X,Y),join(Y,Z)),Y) = Y )).
+

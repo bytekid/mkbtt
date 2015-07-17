@@ -1,0 +1,4 @@
+cnf(distributivity_dual, axiom, ( join(meet(join(meet(X,Y),Z),Y),meet(Z,X)) = meet(join(meet(join(X,Y),Z),Y),join(Z,X)) )).
+
+include('Axioms/LAT001-0.ax').
+

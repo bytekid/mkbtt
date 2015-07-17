@@ -1,0 +1,4 @@
+cnf(mocking_bird_exists, axiom, ( response(mocking_bird,Y) = response(Y,Y) )).
+
+cnf(composer_exists, hypothesis, ( response(compose(X,Y),W) = response(X,response(Y,W)) )).
+

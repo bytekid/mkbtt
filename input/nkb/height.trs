@@ -1,0 +1,12 @@
+(VAR x y z)
+(THEORY (AC N max maxx))
+(RULES
+h(L(x)) -> 0
+h(N(x,y)) -> max(h(x),h(y))
+max(0,x) -> x
+max(x,0) -> x
+max(s(x),s(y)) -> s(maxx(x,y))
+maxx(0,x) -> x
+maxx(x,0) -> x
+maxx(s(x),s(y)) -> s(max(x,y))
+)

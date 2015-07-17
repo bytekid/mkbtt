@@ -1,0 +1,10 @@
+cnf(idempotence_of_meet2, axiom, ( meet2(X,X) = X )).
+
+cnf(commutativity_of_meet2, axiom, ( meet2(X,Y) = meet2(Y,X) )).
+
+cnf(wal_1_2, axiom, ( meet2(meet2(join(X,Y),join(Z,Y)),Y) = Y )).
+
+cnf(wal_2_2, axiom, ( join(join(meet2(X,Y),meet2(Z,Y)),Y) = Y )).
+
+include('Axioms/LAT005-0.ax').
+

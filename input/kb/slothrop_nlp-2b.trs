@@ -1,0 +1,6 @@
+(VAR x y z )
+(RULES 
+  f(x,g(y,z))  ->  g(y,f(x,z))    
+  g(f(x,y),z)  ->  f(g(x,z),y) 
+ f(a,h(b,g(c,d)))  ->  f(a,g(c,h(b,d)))  
+)

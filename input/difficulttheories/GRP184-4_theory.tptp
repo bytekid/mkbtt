@@ -1,0 +1,14 @@
+cnf(p21x_1, hypothesis, ( inverse(identity) = identity )).
+
+cnf(p21x_2, hypothesis, ( inverse(inverse(X)) = X )).
+
+cnf(p21x_3, hypothesis, ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+cnf(p21x_4, hypothesis, ( inverse(greatest_lower_bound(X,Y)) = least_upper_bound(inverse(X),inverse(Y)) )).
+
+cnf(p21x_5, hypothesis, ( inverse(least_upper_bound(X,Y)) = greatest_lower_bound(inverse(X),inverse(Y)) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

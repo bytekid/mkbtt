@@ -1,0 +1,36 @@
+%------------------------------------------------------------------------------
+% File     : ROB030-1 : TPTP v3.6.0. Released v3.1.0.
+% Domain   : Robbins Algebra
+% Problem  : Exists absorbed element => Exists absorbed within negation element
+% Version  : [Win90] (equality) axioms.
+%            Theorem formulation : Denies Huntington's axiom.
+% English  : If there are elements c and d such that c+d=d, then the 
+%            algebra is Boolean.
+
+% Refs     : [Win90] Winker (1990), Robbins Algebra: Conditions that make a
+%          : [Loe04] Loechner (2004), Email to Geoff Sutcliffe
+% Source   : [Loe04]
+% Names    : (1) [Loe04]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v3.1.0
+% Syntax   : Number of clauses     :    5 (   0 non-Horn;   5 unit;   2 RR)
+%            Number of atoms       :    5 (   5 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    4 (   2 constant; 0-2 arity)
+%            Number of variables   :    9 (   1 singleton)
+%            Maximal term depth    :    6 (   2 average)
+
+% Comments : 
+%------------------------------------------------------------------------------
+%----Include axioms for Robbins algebra 
+include('Axioms/ROB001-0.ax').
+%------------------------------------------------------------------------------
+cnf(absorbtion,hypothesis,
+    ( add(c,d) = d )).
+
+cnf(prove_absorption_within_negation,negated_conjecture,
+    ( negate(add(A,B)) != negate(B) )).
+
+%------------------------------------------------------------------------------

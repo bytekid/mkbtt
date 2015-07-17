@@ -1,0 +1,44 @@
+%--------------------------------------------------------------------------
+% File     : GRP189-2 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Group Theory (Lattice Ordered)
+% Problem  : Consequence of lattice theory
+% Version  : [Fuc94] (equality) axioms : Augmented.
+% English  : 
+
+% Refs     : [Fuc94] Fuchs (1994), The Application of Goal-Orientated Heuri
+%          : [Sch95] Schulz (1995), Explanation Based Learning for Distribu
+% Source   : [Sch95]
+% Names    : p38b [Sch95]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.0.0
+% Syntax   : Number of clauses     :   19 (   0 non-Horn;  19 unit;   2 RR)
+%            Number of atoms       :   19 (  19 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   3 constant; 0-2 arity)
+%            Number of variables   :   36 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : ORDERING LPO greatest_lower_bound > least_upper_bound >
+%            inverse > product > identity > a > b
+% Bugfixes : v1.2.1 - Duplicate axioms in GRP004-2.ax removed.
+%--------------------------------------------------------------------------
+%----Include equality group theory axioms 
+include('Axioms/GRP004-0.ax').
+%----Include Lattice ordered group (equality) axioms
+include('Axioms/GRP004-2.ax').
+%--------------------------------------------------------------------------
+cnf(p38b_1,hypothesis,
+    ( inverse(identity) = identity )).
+
+cnf(p38b_2,hypothesis,
+    ( inverse(inverse(X)) = X )).
+
+cnf(p38b_3,hypothesis,
+    ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+cnf(prove_p38b,negated_conjecture,
+    (  greatest_lower_bound(b,least_upper_bound(a,b)) != b )).
+
+%--------------------------------------------------------------------------

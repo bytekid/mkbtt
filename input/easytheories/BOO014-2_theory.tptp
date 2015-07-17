@@ -1,0 +1,6 @@
+cnf(a_plus_b_is_c, hypothesis, ( add(a,b) = c )).
+
+cnf(a_inverse_times_b_inverse_is_d, hypothesis, ( multiply(inverse(a),inverse(b)) = d )).
+
+include('Axioms/BOO003-0.ax').
+

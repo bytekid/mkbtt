@@ -1,0 +1,15 @@
+(VAR x y z w )
+(RULES 
+  trans(trans(x,y),z)  ->  trans(x,trans(y,z))
+ trans(refl,x)  ->  x
+ trans(x,refl)  ->  x
+ congror1(refl)  ->  refl
+ congror2(refl)  ->  refl
+ trans(congror1(x),ortrue2)  ->  ortrue2
+ trans(congror2(x),ortrue1)  ->  ortrue1
+ trans(congror2(x),orfalse1) ->  trans(orfalse1,x) 
+ trans(congror1(x),orfalse2) ->  trans(orfalse2,x)
+ trans(trans(congror1(x),congror2(y)), trans(congror1(z),congror2(w)))  ->  trans(congror1(trans(x,z)), congror2(trans(y,w)))
+ trans(ortrue1,x)  ->  ortrue1
+ trans(ortrue2,x)  ->  ortrue2
+)

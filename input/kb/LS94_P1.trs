@@ -1,0 +1,17 @@
+(VAR x y z)
+(RULES
+ f(x,f(y,z)) ->  f(f(x,y),z)
+ f(x,i(x)) -> e
+ f(i(x), x) -> e
+ f(e, x) -> x
+ f(x,e) ->  x
+ T(r(t(R(R(x))))) -> x
+ R(s(r(S(S(x))))) -> x
+ S(t(s(T(T(x))))) -> x
+ r(R(x)) -> x
+ R(r(x)) -> x
+ s(S(x)) -> x
+ S(s(x)) -> x
+ t(T(x)) -> x
+ T(t(x)) -> x
+)

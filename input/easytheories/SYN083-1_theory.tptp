@@ -1,0 +1,2 @@
+cnf(f_is_associative, axiom, ( f(X,f(Y,Z)) = f(f(X,Y),Z) )).
+

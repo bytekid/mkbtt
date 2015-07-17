@@ -1,0 +1,14 @@
+cnf(absorption1, axiom, ( meet(X,join(X,Y)) = X )).
+
+cnf(absorption2, axiom, ( join(X,meet(X,Y)) = X )).
+
+cnf(commutativity_of_meet, axiom, ( meet(X,Y) = meet(Y,X) )).
+
+cnf(commutativity_of_join, axiom, ( join(X,Y) = join(Y,X) )).
+
+cnf(associativity_of_meet, axiom, ( meet(meet(X,Y),Z) = meet(X,meet(Y,Z)) )).
+
+cnf(associativity_of_join, axiom, ( join(join(X,Y),Z) = join(X,join(Y,Z)) )).
+
+include('Axioms/LAT001-0.ax').
+

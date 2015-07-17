@@ -1,0 +1,41 @@
+%--------------------------------------------------------------------------
+% File     : LDA001-1 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : LD-Algebras
+% Problem  : Verify 3*2*U = UUU, where U = 2*2
+% Version  : [Jec93] (equality) axioms.
+% English  : 
+
+% Refs     : [Jec93] Jech (1993), LD-Algebras
+% Source   : [Jec93]
+% Names    : Problem 1 [Jec93]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.25 v2.0.0
+% Syntax   : Number of clauses     :    5 (   0 non-Horn;   5 unit;   4 RR)
+%            Number of atoms       :    5 (   5 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   4 constant; 0-2 arity)
+%            Number of variables   :    3 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----A1: x(yz)=xy(xz) 
+cnf(a1,axiom,
+    ( f(X,f(Y,Z)) = f(f(X,Y),f(X,Z)) )).
+
+cnf(clause_2,axiom,
+    ( n2 = f(n1,n1) )).
+
+cnf(clause_3,axiom,
+    ( n3 = f(n2,n1) )).
+
+cnf(clause_4,axiom,
+    ( u = f(n2,n2) )).
+
+%----3*2*U = U*U*U 
+cnf(prove_equation,negated_conjecture,
+    (  f(f(n3,n2),u) != f(f(u,u),u) )).
+
+%--------------------------------------------------------------------------

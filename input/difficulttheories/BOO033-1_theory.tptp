@@ -1,0 +1,14 @@
+cnf(distributivity, axiom, ( add(multiply(X,Y),add(multiply(Y,Z),multiply(Z,X))) = multiply(add(X,Y),multiply(add(Y,Z),add(Z,X))) )).
+
+cnf(l1, axiom, ( add(X,multiply(Y,multiply(X,Z))) = X )).
+
+cnf(l3, axiom, ( add(add(multiply(X,Y),multiply(Y,Z)),Y) = Y )).
+
+cnf(property3, axiom, ( multiply(add(X,inverse(X)),Y) = Y )).
+
+cnf(majority1, axiom, ( multiply(add(multiply(X,Y),X),add(X,Y)) = X )).
+
+cnf(majority2, axiom, ( multiply(add(multiply(X,X),Y),add(X,X)) = X )).
+
+cnf(majority3, axiom, ( multiply(add(multiply(X,Y),Y),add(X,Y)) = Y )).
+

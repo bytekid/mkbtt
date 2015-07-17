@@ -1,0 +1,8 @@
+(VAR x)
+(THEORY (AC p))
+(RULES
+p(x,one) -> x
+p(i(x),x) -> one
+g(one) -> one
+g(p(x,y)) -> p(g(x),g(y))
+)

@@ -1,0 +1,34 @@
+%--------------------------------------------------------------------------
+% File     : LAT032-1 : TPTP v3.6.0. Released v2.4.0.
+% Domain   : Lattice Theory
+% Problem  : Distributivity of join implies distributivity of meet 
+% Version  : [McC88] (equality) axioms.
+% English  :
+
+% Refs     : [DeN00] DeNivelle (2000), Email to G. Sutcliffe
+%            [McC88] McCune (1988), Challenge Equality Problems in Lattice
+% Source   : [DeN00]
+% Names    : dist_meet [DeN00]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.4.0
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :   19 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include lattice theory axioms
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+cnf(dist_join,hypothesis,
+    ( join(X,meet(Y,Z)) = meet(join(X,Y),join(X,Z)) )).
+
+cnf(dist_meet,negated_conjecture,
+    (  meet(xx,join(yy,zz)) != join(meet(xx,yy),meet(xx,zz)) )).
+
+%--------------------------------------------------------------------------

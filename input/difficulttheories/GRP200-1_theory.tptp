@@ -1,0 +1,18 @@
+cnf(left_identity, axiom, ( multiply(identity,X) = X )).
+
+cnf(right_identity, axiom, ( multiply(X,identity) = X )).
+
+cnf(multiply_left_division, axiom, ( multiply(X,left_division(X,Y)) = Y )).
+
+cnf(left_division_multiply, axiom, ( left_division(X,multiply(X,Y)) = Y )).
+
+cnf(multiply_right_division, axiom, ( multiply(right_division(X,Y),Y) = X )).
+
+cnf(right_division_multiply, axiom, ( right_division(multiply(X,Y),Y) = X )).
+
+cnf(right_inverse, axiom, ( multiply(X,right_inverse(X)) = identity )).
+
+cnf(left_inverse, axiom, ( multiply(left_inverse(X),X) = identity )).
+
+cnf(moufang1, axiom, ( multiply(multiply(X,multiply(Y,Z)),X) = multiply(multiply(X,Y),multiply(Z,X)) )).
+

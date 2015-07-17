@@ -1,0 +1,4 @@
+cnf(distributivity_law, hypothesis, ( meet(X,join(Y,Z)) = join(meet(X,Y),meet(X,Z)) )).
+
+include('Axioms/LAT004-0.ax').
+

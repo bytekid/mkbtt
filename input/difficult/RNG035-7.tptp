@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : RNG035-7 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Ring Theory
+% Problem  : If X*X*X*X = X then the ring is commutative
+% Version  : [LW91] (equality) axioms.
+% English  : Given a ring in which for all x, x * x * x * x = x, prove 
+%            that for all x and y, x * y = y * x.
+
+% Refs     : [LW91]  Lusk & Wos (1991), Benchmark Problems in Which Equalit
+% Source   : [LW91]
+% Names    : RT3 [LW91]
+
+% Status   : Unsatisfiable
+% Rating   : 0.89 v3.4.0, 0.88 v3.3.0, 0.79 v3.2.0, 0.86 v3.1.0, 0.67 v2.7.0, 0.73 v2.6.0, 0.50 v2.5.0, 0.25 v2.4.0, 0.33 v2.2.1, 1.00 v2.0.0
+% Syntax   : Number of clauses     :   12 (   0 non-Horn;  12 unit;   2 RR)
+%            Number of atoms       :   12 (  12 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   19 (   0 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include ring theory axioms 
+include('Axioms/RNG005-0.ax').
+%--------------------------------------------------------------------------
+cnf(x_fourthed_is_x,hypothesis,
+    ( multiply(X,multiply(X,multiply(X,X))) = X )).
+
+cnf(a_times_b_is_c,negated_conjecture,
+    ( multiply(a,b) = c )).
+
+cnf(prove_commutativity,negated_conjecture,
+    (  multiply(b,a) != c )).
+
+%--------------------------------------------------------------------------

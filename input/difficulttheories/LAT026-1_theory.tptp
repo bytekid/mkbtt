@@ -1,0 +1,4 @@
+cnf(absorbtion, hypothesis, ( meet(X,join(Y,join(X,Z))) = X )).
+
+include('Axioms/LAT005-0.ax').
+

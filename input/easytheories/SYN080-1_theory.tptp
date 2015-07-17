@@ -1,0 +1,2 @@
+cnf(clause_1, axiom, ( f(X) = g(Y) )).
+

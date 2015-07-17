@@ -1,0 +1,20 @@
+(VAR x)
+(RULES
+ a(b(c(x))) -> d(x) 
+ b(c(d(x))) -> e(x)
+ c(d(e(x))) -> a(x) 
+ d(e(a(x))) -> b(x)
+ e(a(b(x))) -> c(x) 
+ a(a1(x)) -> x
+ a1(a(x)) -> x 
+ b(b1(x)) -> x 
+ b1(b(x)) -> x
+ c(c1(x)) -> x 
+ c1(c(x)) -> x 
+ d(d1(x)) -> x
+ d1(d(x)) -> x 
+ e(e1(x)) -> x 
+ e1(e(x)) -> x
+)
+(COMMENT example Z22 from
+Avenhaus, Denzinger (93): Distributing equational theorem proving)

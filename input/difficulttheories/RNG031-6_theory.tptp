@@ -1,0 +1,28 @@
+cnf(commutativity_for_addition, axiom, ( add(X,Y) = add(Y,X) )).
+
+cnf(associativity_for_addition, axiom, ( add(X,add(Y,Z)) = add(add(X,Y),Z) )).
+
+cnf(left_additive_identity, axiom, ( add(additive_identity,X) = X )).
+
+cnf(right_additive_identity, axiom, ( add(X,additive_identity) = X )).
+
+cnf(left_multiplicative_zero, axiom, ( multiply(additive_identity,X) = additive_identity )).
+
+cnf(right_multiplicative_zero, axiom, ( multiply(X,additive_identity) = additive_identity )).
+
+cnf(left_additive_inverse, axiom, ( add(additive_inverse(X),X) = additive_identity )).
+
+cnf(right_additive_inverse, axiom, ( add(X,additive_inverse(X)) = additive_identity )).
+
+cnf(distribute1, axiom, ( multiply(X,add(Y,Z)) = add(multiply(X,Y),multiply(X,Z)) )).
+
+cnf(distribute2, axiom, ( multiply(add(X,Y),Z) = add(multiply(X,Z),multiply(Y,Z)) )).
+
+cnf(additive_inverse_additive_inverse, axiom, ( additive_inverse(additive_inverse(X)) = X )).
+
+cnf(right_alternative, axiom, ( multiply(multiply(X,Y),Y) = multiply(X,multiply(Y,Y)) )).
+
+cnf(associator, axiom, ( associator(X,Y,Z) = add(multiply(multiply(X,Y),Z),additive_inverse(multiply(X,multiply(Y,Z)))) )).
+
+cnf(commutator, axiom, ( commutator(X,Y) = add(multiply(Y,X),additive_inverse(multiply(X,Y))) )).
+

@@ -1,0 +1,8 @@
+cnf(p03b_1, hypothesis, ( greatest_lower_bound(a,b) = a )).
+
+cnf(p03b_2, hypothesis, ( greatest_lower_bound(c,d) = c )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

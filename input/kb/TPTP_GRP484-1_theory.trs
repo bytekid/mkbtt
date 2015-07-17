@@ -1,0 +1,8 @@
+(VAR a b c)
+(RULES
+double_divide(double_divide(a,double_divide(double_divide(double_divide(a,b),c),double_divide(b,identity))),double_divide(identity,identity)) -> c
+multiply(a,b) -> double_divide(double_divide(b,a),identity)
+inverse(a) -> double_divide(a,identity)
+identity -> double_divide(a,inverse(a))
+)
+

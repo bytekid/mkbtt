@@ -1,0 +1,4 @@
+cnf(cls_Message_Oanalz__synth__Un_0, axiom, ( c_Message_Oanalz(c_union(c_Message_Osynth(V_G),V_H,tc_Message_Omsg)) = c_union(c_Message_Oanalz(c_union(V_G,V_H,tc_Message_Omsg)),c_Message_Osynth(V_G),tc_Message_Omsg) )).
+
+cnf(cls_Set_OUn__empty__right_0, axiom, ( c_union(V_y,c_emptyset,T_a) = V_y )).
+

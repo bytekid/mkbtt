@@ -1,0 +1,20 @@
+cnf(l1, axiom, ( add(X,multiply(Y,multiply(X,Z))) = X )).
+
+cnf(l3, axiom, ( add(add(multiply(X,Y),multiply(Y,Z)),Y) = Y )).
+
+cnf(b1, axiom, ( multiply(add(X,Y),add(X,inverse(Y))) = X )).
+
+cnf(l2, axiom, ( multiply(X,add(Y,add(X,Z))) = X )).
+
+cnf(l4, axiom, ( multiply(multiply(add(X,Y),add(Y,Z)),Y) = Y )).
+
+cnf(b2, axiom, ( add(multiply(X,Y),multiply(X,inverse(Y))) = X )).
+
+cnf(commutativity_of_add, axiom, ( add(X,Y) = add(Y,X) )).
+
+cnf(commutativity_of_multiply, axiom, ( multiply(X,Y) = multiply(Y,X) )).
+
+cnf(associativity_of_add, axiom, ( add(add(X,Y),Z) = add(X,add(Y,Z)) )).
+
+cnf(associativity_of_multiply, axiom, ( multiply(multiply(X,Y),Z) = multiply(X,multiply(Y,Z)) )).
+

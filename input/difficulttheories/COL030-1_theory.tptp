@@ -1,0 +1,4 @@
+cnf(s_definition, axiom, ( apply(apply(apply(s,X),Y),Z) = apply(apply(X,Z),apply(Y,Z)) )).
+
+cnf(l_definition, axiom, ( apply(apply(l,X),Y) = apply(X,apply(Y,Y)) )).
+

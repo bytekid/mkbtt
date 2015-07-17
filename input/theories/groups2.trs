@@ -1,0 +1,11 @@
+(VAR x)
+(THEORY (AC p))
+(RULES
+p(x,zero) -> x
+p(i(x),x) -> zero
+i(zero()) -> zero()
+i(i(x)) -> x
+p(i(p(x,x1)),x1) -> i(x)
+i(p(i(x1),x)) -> p(i(x),x1)
+p(i(x),i(x1)) -> i(p(x,x1))
+)

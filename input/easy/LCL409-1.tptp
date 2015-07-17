@@ -1,0 +1,30 @@
+%--------------------------------------------------------------------------
+% File     : LCL409-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Logic Calculi (Wajsberg Algebras)
+% Problem  : Wajsberg algebra AND and OR definitions
+% Version  : [AB90] (equality) axioms.
+% English  : 
+
+% Refs     : [FRT84] Font et al. (1984), Wajsberg Algebras
+%          : [AB90]  Anantharaman & Bonacina (1990), An Application of the 
+%          : [Bon91] Bonacina (1991), Problems in Lukasiewicz Logic
+% Source   : [Bon91]
+% Names    : 
+
+% Status   : Satisfiable
+% Rating   : 0.00 v3.2.0, 0.33 v3.1.0, 0.00 v2.5.0
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   0 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   1 constant; 0-2 arity)
+%            Number of variables   :   22 (   0 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Wajsberg algebra axioms
+include('Axioms/LCL001-0.ax').
+%----Include Wajsberg algebra AND and OR definitions
+include('Axioms/LCL001-2.ax').
+%--------------------------------------------------------------------------

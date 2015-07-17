@@ -1,0 +1,7 @@
+(VAR vg vh vy ta va vb vc )
+(RULES
+c_Message_Oparts(c_union(vg,vh,tc_Message_Omsg)) -> c_union(c_Message_Oparts(vg),c_Message_Oparts(vh),tc_Message_Omsg)
+c_union(c_emptyset,vy,ta) -> vy
+c_union(c_insert(va,vb,ta),vc,ta) -> c_insert(va,c_union(vb,vc,ta),ta)
+)
+

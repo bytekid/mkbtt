@@ -1,0 +1,18 @@
+cnf(dist_join, hypothesis, ( join(X,meet(Y,Z)) = meet(join(X,Y),join(X,Z)) )).
+
+cnf(dist_meet, hypothesis, ( meet(X,join(Y,Z)) = join(meet(X,Y),meet(X,Z)) )).
+
+cnf(f_on_left_join, axiom, ( f(join(U,V),W) = join(f(U,W),f(V,W)) )).
+
+cnf(f_on_left_bottom, axiom, ( f(n0,W) = n0 )).
+
+cnf(f_on_right_join, axiom, ( f(W,join(U,V)) = join(f(W,U),f(W,V)) )).
+
+cnf(f_on_right_bottom, axiom, ( f(W,n0) = n0 )).
+
+cnf(lhs1, hypothesis, ( f(join(aa,bb),dd) = f(join(cc,bb),dd) )).
+
+cnf(lhs2, hypothesis, ( meet(f(aa,dd),f(bb,dd)) = meet(f(cc,dd),f(bb,dd)) )).
+
+include('Axioms/LAT001-0.ax').
+

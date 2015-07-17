@@ -1,0 +1,28 @@
+cnf(idempotence_of_meet, axiom, ( meet(X,X) = X )).
+
+cnf(idempotence_of_join, axiom, ( join(X,X) = X )).
+
+cnf(absorption1, axiom, ( meet(X,join(X,Y)) = X )).
+
+cnf(absorption2, axiom, ( join(X,meet(X,Y)) = X )).
+
+cnf(commutativity_of_meet, axiom, ( meet(X,Y) = meet(Y,X) )).
+
+cnf(commutativity_of_join, axiom, ( join(X,Y) = join(Y,X) )).
+
+cnf(tnl_1, axiom, ( join(X,meet(Y,meet(X,Z))) = X )).
+
+cnf(tnl_2, axiom, ( meet(X,join(Y,join(X,Z))) = X )).
+
+cnf(idempotence_of_meet2, axiom, ( meet2(X,X) = X )).
+
+cnf(absorption1_2, axiom, ( meet2(X,join(X,Y)) = X )).
+
+cnf(absorption2_2, axiom, ( join(X,meet2(X,Y)) = X )).
+
+cnf(commutativity_of_meet2, axiom, ( meet2(X,Y) = meet2(Y,X) )).
+
+cnf(tnl_1_2, axiom, ( join(X,meet2(Y,meet2(X,Z))) = X )).
+
+cnf(tnl_2_2, axiom, ( meet2(X,join(Y,join(X,Z))) = X )).
+

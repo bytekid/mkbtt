@@ -1,0 +1,6 @@
+cnf(p33_1, hypothesis, ( greatest_lower_bound(least_upper_bound(a,inverse(a)),least_upper_bound(b,inverse(b))) = identity )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

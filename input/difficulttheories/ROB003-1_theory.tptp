@@ -1,0 +1,4 @@
+cnf(there_exists_a_constant, hypothesis, ( add(X,c) = c )).
+
+include('Axioms/ROB001-0.ax').
+

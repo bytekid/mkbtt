@@ -1,0 +1,4 @@
+cnf(condition, hypothesis, ( add(c,negate(c)) = c )).
+
+include('Axioms/ROB001-0.ax').
+

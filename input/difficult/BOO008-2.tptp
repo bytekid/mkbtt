@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : BOO008-2 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Boolean Algebra
+% Problem  : Sum is associative ( (X + Y) + Z = X + (Y + Z) )
+% Version  : [ANL] (equality) axioms.
+% English  : 
+
+% Refs     : 
+% Source   : [ANL]
+% Names    : prob1.ver2.in [ANL]
+
+% Status   : Unsatisfiable
+% Rating   : 0.11 v3.4.0, 0.12 v3.3.0, 0.14 v3.2.0, 0.07 v3.1.0, 0.00 v2.7.0, 0.09 v2.6.0, 0.17 v2.5.0, 0.00 v2.2.1, 0.44 v2.2.0, 0.57 v2.1.0, 0.75 v2.0.0
+% Syntax   : Number of clauses     :   15 (   0 non-Horn;  15 unit;   1 RR)
+%            Number of atoms       :   15 (  15 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    8 (   5 constant; 0-2 arity)
+%            Number of variables   :   24 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include boolean algebra axioms for equality formulation 
+include('Axioms/BOO003-0.ax').
+%--------------------------------------------------------------------------
+%----The ANL version of this problem includes the idempotence lemmas 
+
+%input_clause(idempotence_of_add,axiom,
+%    [++equal(add(X,X),X)]).
+%input_clause(idempotence_of_multiply,axiom,
+%    [++equal(multiply(X,X),X)]).
+
+cnf(prove_associativity,negated_conjecture,
+    (  add(a,add(b,c)) != add(add(a,b),c) )).
+
+%--------------------------------------------------------------------------

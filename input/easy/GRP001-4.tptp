@@ -1,0 +1,45 @@
+%--------------------------------------------------------------------------
+% File     : GRP001-4 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Group Theory
+% Problem  : X^2 = identity => commutativity
+% Version  : [Wos65] (equality) axioms : Incomplete.
+% English  : If the square of every element is the identity, the system 
+%            is commutative.
+
+% Refs     : [Wos65] Wos (1965), Unpublished Note
+%          : [Pel86] Pelletier (1986), Seventy-five Problems for Testing Au
+% Source   : [Pel86]
+% Names    : Pelletier 65 [Pel86]
+%          : x2_quant.in [OTTER]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.25 v2.0.0
+% Syntax   : Number of clauses     :    5 (   0 non-Horn;   5 unit;   2 RR)
+%            Number of atoms       :    5 (   5 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   4 constant; 0-2 arity)
+%            Number of variables   :    5 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : [Pel86] says "... problems, published I think, by Larry Wos 
+%            (but I cannot locate where)."
+%--------------------------------------------------------------------------
+%----The operation '*' is associative 
+cnf(associativity,axiom,
+    ( multiply(multiply(X,Y),Z) = multiply(X,multiply(Y,Z)) )).
+
+%----There exists an identity element 'e' defined below.
+cnf(left_identity,axiom,
+    ( multiply(identity,X) = X )).
+
+cnf(squareness,hypothesis,
+    ( multiply(X,X) = identity )).
+
+cnf(a_times_b_is_c,hypothesis,
+    ( multiply(a,b) = c )).
+
+cnf(prove_b_times_a_is_c,negated_conjecture,
+    (  multiply(b,a) != c )).
+
+%--------------------------------------------------------------------------

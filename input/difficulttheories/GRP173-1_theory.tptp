@@ -1,0 +1,8 @@
+cnf(p05a_1, hypothesis, ( least_upper_bound(identity,a) = identity )).
+
+cnf(p05a_2, hypothesis, ( least_upper_bound(identity,inverse(a)) = identity )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

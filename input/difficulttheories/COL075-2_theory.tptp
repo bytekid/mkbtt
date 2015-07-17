@@ -1,0 +1,6 @@
+cnf(k_definition, axiom, ( apply(apply(k,X),Y) = X )).
+
+cnf(abstraction, axiom, ( apply(apply(apply(abstraction,X),Y),Z) = apply(apply(X,apply(k,Z)),apply(Y,Z)) )).
+
+include('Axioms/COL001-0.ax').
+

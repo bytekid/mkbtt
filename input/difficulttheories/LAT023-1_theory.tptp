@@ -1,0 +1,4 @@
+cnf(modularity_axiom, hypothesis, ( join(meet(join(X,Y),Z),Y) = join(meet(join(Z,Y),X),Y) )).
+
+include('Axioms/LAT004-0.ax').
+

@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : LAT009-1 : TPTP v3.6.0. Released v2.2.0.
+% Domain   : Lattice Theory
+% Problem  : A self-dual form of distributivity for lattice theory.
+% Version  : [MP96] (equality) axioms : Especial.
+% English  : From lattice theory axioms and a self-dual form of
+%            distributivity, we prove ordinary distributivity.
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+% Source   : [McC98]
+% Names    : LT-5 [MP96]
+
+% Status   : Unsatisfiable
+% Rating   : 0.11 v3.4.0, 0.12 v3.3.0, 0.00 v2.2.1
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :   19 (   2 singleton)
+%            Maximal term depth    :    5 (   2 average)
+
+% Comments :
+%--------------------------------------------------------------------------
+%----Include lattice axioms
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+%----A self-dual form of distributivity for lattice theory.
+cnf(distributivity_dual,axiom,
+    ( join(meet(join(meet(X,Y),Z),Y),meet(Z,X)) = meet(join(meet(join(X,Y),Z),Y),join(Z,X)) )).
+
+%----Denial of ordinary distributivity.
+cnf(prove_distributivity,negated_conjecture,
+    (  join(a,meet(b,c)) != meet(join(a,b),join(a,c)) )).
+
+%--------------------------------------------------------------------------

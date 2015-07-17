@@ -1,0 +1,4 @@
+cnf(identity_constant, hypothesis, ( add(c,d) = c )).
+
+include('Axioms/ROB001-0.ax').
+

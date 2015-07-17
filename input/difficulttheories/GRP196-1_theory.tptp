@@ -1,0 +1,4 @@
+cnf(condition, hypothesis, ( multiply(X,multiply(Y,multiply(Y,Y))) = multiply(Y,multiply(Y,multiply(Y,X))) )).
+
+include('Axioms/GRP008-0.ax').
+

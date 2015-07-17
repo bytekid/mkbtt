@@ -1,0 +1,16 @@
+cnf(right_identity, axiom, ( add(X,additive_identity) = X )).
+
+cnf(right_additive_inverse, axiom, ( add(X,additive_inverse(X)) = additive_identity )).
+
+cnf(distribute1, axiom, ( multiply(X,add(Y,Z)) = add(multiply(X,Y),multiply(X,Z)) )).
+
+cnf(distribute2, axiom, ( multiply(add(X,Y),Z) = add(multiply(X,Z),multiply(Y,Z)) )).
+
+cnf(associative_addition, axiom, ( add(add(X,Y),Z) = add(X,add(Y,Z)) )).
+
+cnf(commutative_addition, axiom, ( add(X,Y) = add(Y,X) )).
+
+cnf(associative_multiplication, axiom, ( multiply(multiply(X,Y),Z) = multiply(X,multiply(Y,Z)) )).
+
+cnf(x_cubed_is_x, hypothesis, ( multiply(X,multiply(X,X)) = X )).
+

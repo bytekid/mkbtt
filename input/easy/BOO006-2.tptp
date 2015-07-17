@@ -1,0 +1,30 @@
+%--------------------------------------------------------------------------
+% File     : BOO006-2 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Boolean Algebra
+% Problem  : Multiplication is bounded (X * 0 = 0)
+% Version  : [ANL] (equality) axioms.
+% English  : 
+
+% Refs     : 
+% Source   : [ANL]
+% Names    : prob3_part2.ver2.in [ANL]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.1.0, 0.38 v2.0.0
+% Syntax   : Number of clauses     :   15 (   0 non-Horn;  15 unit;   1 RR)
+%            Number of atoms       :   15 (  15 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   3 constant; 0-2 arity)
+%            Number of variables   :   24 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include boolean algebra axioms for equality formulation 
+include('Axioms/BOO003-0.ax').
+%--------------------------------------------------------------------------
+cnf(prove_right_identity,negated_conjecture,
+    (  multiply(a,additive_identity) != additive_identity )).
+
+%--------------------------------------------------------------------------

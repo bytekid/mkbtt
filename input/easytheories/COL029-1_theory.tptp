@@ -1,0 +1,2 @@
+cnf(u_definition, axiom, ( apply(apply(u,X),Y) = apply(Y,apply(apply(X,X),Y)) )).
+

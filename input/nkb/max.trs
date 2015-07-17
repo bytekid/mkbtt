@@ -1,0 +1,8 @@
+(VAR x y z)
+(THEORY (AC p))
+(RULES
+max(L(x)) -> x
+max(p(L(0),L(y))) -> y
+max(p(L(s(x)),L(s(y)))) -> s(max(p(L(x),L(y))))
+max(p(L(x),p(y,z))) -> max(p(L(x),L(max(p(y,z)))))
+)

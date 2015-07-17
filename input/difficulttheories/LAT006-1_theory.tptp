@@ -1,0 +1,4 @@
+cnf(absorption, axiom, ( meet(X,join(X,Y)) = X )).
+
+cnf(distribution, axiom, ( meet(X,join(Y,Z)) = join(meet(Z,X),meet(Y,X)) )).
+

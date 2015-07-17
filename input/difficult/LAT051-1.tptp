@@ -1,0 +1,43 @@
+%--------------------------------------------------------------------------
+% File     : LAT051-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Lattice Theory
+% Problem  : Lattice is not ortholattice
+% Version  : [McC88] (equality) axioms.
+% English  : 
+
+% Refs     : [McC88] McCune (1988), Challenge Equality Problems in Lattice 
+%          : [RW01]  Rose & Wilkinson (2001), Application of Model Search
+% Source   : [RW01]
+% Names    : mace-e1.in [RW01]
+
+% Status   : Satisfiable
+% Rating   : 0.33 v3.2.0, 0.67 v3.1.0, 0.33 v2.5.0
+% Syntax   : Number of clauses     :   12 (   0 non-Horn;  12 unit;   1 RR)
+%            Number of atoms       :   12 (  12 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   19 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : First part of the problem. The second part, mace-e2.in, requires
+%            MACE specific input.
+%--------------------------------------------------------------------------
+%----Include lattice axioms 
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+%----Invertability (5)
+cnf(invertability1,axiom,
+    ( join(complement(X),X) = n1 )).
+
+cnf(invertability2,axiom,
+    ( meet(complement(X),X) = n0 )).
+
+cnf(invertability3,axiom,
+    ( complement(complement(X)) = X )).
+
+%----Denial of compatibility (6)
+cnf(prove_compatibility_law,negated_conjecture,
+    (  complement(join(a,b)) != meet(complement(a),complement(b)) )).
+
+%--------------------------------------------------------------------------

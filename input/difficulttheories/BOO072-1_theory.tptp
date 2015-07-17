@@ -1,0 +1,2 @@
+cnf(dn1, axiom, ( inverse(add(inverse(add(inverse(add(A,B)),C)),inverse(add(A,inverse(add(inverse(C),inverse(add(C,D)))))))) = C )).
+

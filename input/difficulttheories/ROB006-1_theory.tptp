@@ -1,0 +1,4 @@
+cnf(absorbtion, hypothesis, ( add(c,d) = d )).
+
+include('Axioms/ROB001-0.ax').
+

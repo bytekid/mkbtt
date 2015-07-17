@@ -1,0 +1,10 @@
+(VAR x y z)
+(THEORY (AC p))
+(RULES
+p(x, zero) -> x
+p(x, i(x)) -> zero
+p(i(x), x) -> zero
+a(a(x)) -> x
+b(b(x)) -> x
+a(b(a(b(a(b(x)))))) -> x
+)

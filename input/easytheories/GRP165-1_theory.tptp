@@ -1,0 +1,6 @@
+cnf(lat1a_1, hypothesis, ( least_upper_bound(a,identity) = a )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

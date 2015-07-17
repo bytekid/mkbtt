@@ -1,0 +1,67 @@
+%--------------------------------------------------------------------------
+% File     : BOO031-1 : TPTP v3.6.0. Released v2.2.0.
+% Domain   : Boolean Algebra
+% Problem  : Dual BA 3-basis, proof of distributivity.
+% Version  : [MP96] (equality) axioms : Especial.
+% English  : This is part of a proof of the existence of a self-dual
+%            3-basis for Boolean algebra by majority reduction.
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+% Source   : [McC98]
+% Names    : DUAL-BA-8-a [MP96]
+
+% Status   : Unsatisfiable
+% Rating   : 0.22 v3.4.0, 0.25 v3.3.0, 0.29 v3.2.0, 0.21 v3.1.0, 0.22 v2.7.0, 0.09 v2.6.0, 0.17 v2.5.0, 0.00 v2.4.0, 0.00 v2.2.1
+% Syntax   : Number of clauses     :   12 (   0 non-Horn;  12 unit;   1 RR)
+%            Number of atoms       :   12 (  12 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    8 (   5 constant; 0-2 arity)
+%            Number of variables   :   27 (   8 singleton)
+%            Maximal term depth    :    4 (   3 average)
+
+% Comments :
+%--------------------------------------------------------------------------
+%----Self-dual distributivity:
+cnf(distributivity,axiom,
+    ( add(multiply(X,Y),add(multiply(Y,Z),multiply(Z,X))) = multiply(add(X,Y),multiply(add(Y,Z),add(Z,X))) )).
+
+%----3 properties of Boolean algebra and the corresponding duals.
+cnf(l1,axiom,
+    ( add(X,multiply(Y,multiply(X,Z))) = X )).
+
+cnf(l3,axiom,
+    ( add(add(multiply(X,Y),multiply(Y,Z)),Y) = Y )).
+
+cnf(property3,axiom,
+    ( multiply(add(X,inverse(X)),Y) = Y )).
+
+cnf(l2,axiom,
+    ( multiply(X,add(Y,add(X,Z))) = X )).
+
+cnf(l4,axiom,
+    ( multiply(multiply(add(X,Y),add(Y,Z)),Y) = Y )).
+
+cnf(property3_dual,axiom,
+    ( add(multiply(X,inverse(X)),Y) = Y )).
+
+%----Existence of 0 and 1.
+cnf(additive_inverse,axiom,
+    ( add(X,inverse(X)) = n1 )).
+
+cnf(multiplicative_inverse,axiom,
+    ( multiply(X,inverse(X)) = n0 )).
+
+%----Associativity of the 2 operations.
+cnf(associativity_of_add,axiom,
+    ( add(add(X,Y),Z) = add(X,add(Y,Z)) )).
+
+cnf(associativity_of_multiply,axiom,
+    ( multiply(multiply(X,Y),Z) = multiply(X,multiply(Y,Z)) )).
+
+%----Denial of conclusion:
+cnf(prove_multiply_add_property,negated_conjecture,
+    (  multiply(a,add(b,c)) != add(multiply(b,a),multiply(c,a)) )).
+
+%--------------------------------------------------------------------------

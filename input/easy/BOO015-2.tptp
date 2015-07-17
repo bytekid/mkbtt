@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : BOO015-2 : TPTP v3.6.0. Bugfixed v1.0.1.
+% Domain   : Boolean Algebra
+% Problem  : DeMorgan for inverse and sum (X^-1 + Y^-1) = (X * Y)^-1
+% Version  : [ANL] (equality) axioms.
+% English  : 
+
+% Refs     : 
+% Source   : [ANL]
+% Names    : prob10.ver2.in [ANL]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.62 v2.0.0
+% Syntax   : Number of clauses     :   17 (   0 non-Horn;  17 unit;   3 RR)
+%            Number of atoms       :   17 (  17 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    9 (   6 constant; 0-2 arity)
+%            Number of variables   :   24 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+% Bugfixes : v1.0.1 - Clause a_inverse_plus_b_inverse_is_d fixed.
+%--------------------------------------------------------------------------
+%----Include boolean algebra axioms for equality formulation 
+include('Axioms/BOO003-0.ax').
+%--------------------------------------------------------------------------
+cnf(a_times_b_is_c,hypothesis,
+    ( multiply(a,b) = c )).
+
+cnf(a_inverse_plus_b_inverse_is_d,hypothesis,
+    ( add(inverse(a),inverse(b)) = d )).
+
+cnf(prove_c_inverse_is_d,negated_conjecture,
+    (  inverse(c) != d )).
+
+%--------------------------------------------------------------------------

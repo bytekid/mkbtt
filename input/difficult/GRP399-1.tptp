@@ -1,0 +1,29 @@
+%--------------------------------------------------------------------------
+% File     : GRP399-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Group Theory (Lattice Ordered)
+% Problem  : Lattice ordered group (equality) axioms
+% Version  : [Fuc94] (equality) axioms.
+% English  : 
+
+% Refs     : [Fuc94] Fuchs (1994), The Application of Goal-Orientated Heuri
+%          : [Sch95] Schulz (1995), Explanation Based Learning for Distribu
+% Source   : [Sch95]
+% Names    : 
+
+% Status   : Satisfiable
+% Rating   : 0.33 v2.5.0
+% Syntax   : Number of clauses     :   15 (   0 non-Horn;  15 unit;   0 RR)
+%            Number of atoms       :   15 (  15 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   1 constant; 0-2 arity)
+%            Number of variables   :   33 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Group theory (equality) axioms
+include('Axioms/GRP004-0.ax').
+%----Include Lattice ordered group (equality) axioms
+include('Axioms/GRP004-2.ax').
+%--------------------------------------------------------------------------

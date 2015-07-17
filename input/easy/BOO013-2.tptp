@@ -1,0 +1,44 @@
+%--------------------------------------------------------------------------
+% File     : BOO013-2 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Boolean Algebra
+% Problem  : The inverse of X is unique
+% Version  : [ANL] (equality) axioms.
+% English  : 
+
+% Refs     : 
+% Source   : [ANL]
+% Names    : prob9.ver2.in [ANL]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.2.1, 0.11 v2.2.0, 0.14 v2.1.0, 0.14 v2.0.0
+% Syntax   : Number of clauses     :   19 (   0 non-Horn;  19 unit;   5 RR)
+%            Number of atoms       :   19 (  19 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    8 (   5 constant; 0-2 arity)
+%            Number of variables   :   24 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+% Bugfixes : v1.2.1 - Clauses b_and_multiplicative_identity and
+%            c_and_multiplicative_identity fixed.
+%--------------------------------------------------------------------------
+%----Include boolean algebra axioms for equality formulation 
+include('Axioms/BOO003-0.ax').
+%--------------------------------------------------------------------------
+cnf(b_and_multiplicative_identity,hypothesis,
+    ( add(a,b) = multiplicative_identity )).
+
+cnf(c_and_multiplicative_identity,hypothesis,
+    ( add(a,c) = multiplicative_identity )).
+
+cnf(b_a_additive_identity,hypothesis,
+    ( multiply(a,b) = additive_identity )).
+
+cnf(c_a_additive_identity,hypothesis,
+    ( multiply(a,c) = additive_identity )).
+
+cnf(prove_b_is_a,negated_conjecture,
+    (  b != c )).
+
+%--------------------------------------------------------------------------

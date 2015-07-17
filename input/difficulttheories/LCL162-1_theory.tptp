@@ -1,0 +1,14 @@
+cnf(xor_commutativity, axiom, ( xor(X,Y) = xor(Y,X) )).
+
+cnf(and_star_associativity, axiom, ( and_star(and_star(X,Y),Z) = and_star(X,and_star(Y,Z)) )).
+
+cnf(and_star_commutativity, axiom, ( and_star(X,Y) = and_star(Y,X) )).
+
+cnf(false_definition, axiom, ( not(truth) = falsehood )).
+
+cnf(implies_definition, axiom, ( implies(X,Y) = xor(truth,and_star(X,xor(truth,Y))) )).
+
+include('Axioms/LCL002-1.ax').
+
+include('Axioms/LCL002-0.ax').
+

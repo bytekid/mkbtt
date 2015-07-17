@@ -1,0 +1,8 @@
+cnf(a1, axiom, ( f(X,f(Y,Z)) = f(f(X,Y),f(X,Z)) )).
+
+cnf(clause_2, axiom, ( n2 = f(n1,n1) )).
+
+cnf(clause_3, axiom, ( n3 = f(n2,n1) )).
+
+cnf(clause_4, axiom, ( u = f(n2,n2) )).
+

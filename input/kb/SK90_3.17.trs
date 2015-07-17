@@ -1,0 +1,7 @@
+(VAR x y z)
+(RULES
+or(and(x, y), and(z, y)) -> and(or(x, z), y)
+and(x, x) -> x
+or(x, x) -> x
+)
+(COMMENT Example 3.17 in \cite{SK90})

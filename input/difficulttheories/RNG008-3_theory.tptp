@@ -1,0 +1,8 @@
+cnf(right_identity, axiom, ( add(X,additive_identity) = X )).
+
+cnf(right_inverse, axiom, ( add(X,additive_inverse(X)) = additive_identity )).
+
+cnf(boolean_ring, hypothesis, ( multiply(X,X) = X )).
+
+include('Axioms/RNG002-0.ax').
+

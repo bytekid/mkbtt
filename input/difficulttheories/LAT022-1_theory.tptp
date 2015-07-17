@@ -1,0 +1,4 @@
+cnf(self_dual_modularity, hypothesis, ( join(meet(X,Y),meet(Z,join(X,Y))) = meet(join(X,Y),join(Z,meet(X,Y))) )).
+
+include('Axioms/LAT004-0.ax').
+

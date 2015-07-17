@@ -1,0 +1,12 @@
+(VAR x y)
+(THEORY (AC p))
+(RULES
+z(zero) -> zero
+p(x, zero) -> x
+p(z(x), z(y)) -> z(p(x,y))
+p(z(x), one(y)) -> one(p(x,y))
+p(one(x), one(y)) -> j(p(x,p(y, one(zero))))
+p(z(x), j(y)) -> j(p(x,y))
+p(j(x), one(y)) -> z(p(x,y))
+p(j(x), j(y)) -> one(p(x,p(y, j(zero))))
+)

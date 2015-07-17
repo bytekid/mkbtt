@@ -1,0 +1,10 @@
+cnf(s_definition, axiom, ( apply(apply(apply(s,X),Y),Z) = apply(apply(X,Z),apply(Y,Z)) )).
+
+cnf(k_definition, axiom, ( apply(apply(k,X),Y) = X )).
+
+cnf(b_definition, axiom, ( apply(apply(apply(b,X),Y),Z) = apply(X,apply(Y,Z)) )).
+
+cnf(i_definition, axiom, ( apply(i,X) = X )).
+
+cnf(sb_property, axiom, ( apply(apply(apply(s,apply(b,X)),i),apply(apply(s,apply(b,X)),i)) = apply(x,apply(apply(apply(s,apply(b,X)),i),apply(apply(s,apply(b,X)),i))) )).
+

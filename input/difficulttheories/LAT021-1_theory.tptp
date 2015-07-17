@@ -1,0 +1,4 @@
+cnf(bowden, hypothesis, ( join(join(X,meet(Y,Z)),meet(join(X,Y),Z)) = join(X,meet(Y,Z)) )).
+
+include('Axioms/LAT004-0.ax').
+

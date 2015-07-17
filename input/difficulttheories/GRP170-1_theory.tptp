@@ -1,0 +1,8 @@
+cnf(p03a_1, hypothesis, ( least_upper_bound(a,b) = b )).
+
+cnf(p03a_2, hypothesis, ( least_upper_bound(c,d) = d )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

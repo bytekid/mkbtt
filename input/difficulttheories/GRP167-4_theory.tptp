@@ -1,0 +1,10 @@
+cnf(p19_1, axiom, ( inverse(identity) = identity )).
+
+cnf(p19_2, axiom, ( inverse(inverse(X)) = X )).
+
+cnf(p19_3, axiom, ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

@@ -1,0 +1,24 @@
+cnf(l1, axiom, ( add(X,multiply(Y,multiply(X,Z))) = X )).
+
+cnf(l3, axiom, ( add(add(multiply(X,Y),multiply(Y,Z)),Y) = Y )).
+
+cnf(property3, axiom, ( multiply(add(X,inverse(X)),Y) = Y )).
+
+cnf(l2, axiom, ( multiply(X,add(Y,add(X,Z))) = X )).
+
+cnf(l4, axiom, ( multiply(multiply(add(X,Y),add(Y,Z)),Y) = Y )).
+
+cnf(property3_dual, axiom, ( add(multiply(X,inverse(X)),Y) = Y )).
+
+cnf(majority1, axiom, ( add(multiply(add(X,Y),X),multiply(X,Y)) = X )).
+
+cnf(majority2, axiom, ( add(multiply(add(X,X),Y),multiply(X,X)) = X )).
+
+cnf(majority3, axiom, ( add(multiply(add(X,Y),Y),multiply(X,Y)) = Y )).
+
+cnf(majority1_dual, axiom, ( multiply(add(multiply(X,Y),X),add(X,Y)) = X )).
+
+cnf(majority2_dual, axiom, ( multiply(add(multiply(X,X),Y),add(X,X)) = X )).
+
+cnf(majority3_dual, axiom, ( multiply(add(multiply(X,Y),Y),add(X,Y)) = Y )).
+

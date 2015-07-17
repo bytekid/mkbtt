@@ -1,0 +1,17 @@
+%--------------------------------------------------------------------------
+cnf(associativity,axiom,
+    ( m(m(X,Y),Z) = m(X,m(Y,Z)) )).
+
+cnf(commutativity,axiom,
+    ( m(X,Y) = m(Y,X) )).
+
+cnf(left_identity,axiom,
+    ( m(identity,X) = X )).
+
+cnf(inverse,hypothesis,
+    ( m(i(X),X) = identity )).
+
+cnf(prove_inverse_homomorphism,negated_conjecture,
+    ( i(i(X)) != X )).
+
+%--------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+cnf(equation_H82, axiom, ( meet(X,join(meet(Y,join(X,Z)),meet(Z,join(X,Y)))) = join(meet(X,Y),meet(X,Z)) )).
+
+include('Axioms/LAT001-0.ax').
+

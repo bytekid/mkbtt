@@ -1,0 +1,8 @@
+cnf(negate_d_is_c, hypothesis, ( negate(d) = c )).
+
+cnf(c_plus_d_is_d, hypothesis, ( add(c,d) = d )).
+
+cnf(c_plus_c_is_c, hypothesis, ( add(c,c) = c )).
+
+include('Axioms/ROB001-0.ax').
+

@@ -1,0 +1,42 @@
+cnf(commutative_addition, axiom, ( add(X,Y) = add(Y,X) )).
+
+cnf(associative_addition, axiom, ( add(add(X,Y),Z) = add(X,add(Y,Z)) )).
+
+cnf(right_identity, axiom, ( add(X,additive_identity) = X )).
+
+cnf(left_identity, axiom, ( add(additive_identity,X) = X )).
+
+cnf(right_additive_inverse, axiom, ( add(X,additive_inverse(X)) = additive_identity )).
+
+cnf(left_additive_inverse, axiom, ( add(additive_inverse(X),X) = additive_identity )).
+
+cnf(additive_inverse_identity, axiom, ( additive_inverse(additive_identity) = additive_identity )).
+
+cnf(property_of_inverse_and_add, axiom, ( add(X,add(additive_inverse(X),Y)) = Y )).
+
+cnf(distribute_additive_inverse, axiom, ( additive_inverse(add(X,Y)) = add(additive_inverse(X),additive_inverse(Y)) )).
+
+cnf(additive_inverse_additive_inverse, axiom, ( additive_inverse(additive_inverse(X)) = X )).
+
+cnf(multiply_additive_id1, axiom, ( multiply(X,additive_identity) = additive_identity )).
+
+cnf(multiply_additive_id2, axiom, ( multiply(additive_identity,X) = additive_identity )).
+
+cnf(product_of_inverse, axiom, ( multiply(additive_inverse(X),additive_inverse(Y)) = multiply(X,Y) )).
+
+cnf(multiply_additive_inverse1, axiom, ( multiply(X,additive_inverse(Y)) = additive_inverse(multiply(X,Y)) )).
+
+cnf(multiply_additive_inverse2, axiom, ( multiply(additive_inverse(X),Y) = additive_inverse(multiply(X,Y)) )).
+
+cnf(distribute1, axiom, ( multiply(X,add(Y,Z)) = add(multiply(X,Y),multiply(X,Z)) )).
+
+cnf(distribute2, axiom, ( multiply(add(X,Y),Z) = add(multiply(X,Z),multiply(Y,Z)) )).
+
+cnf(right_alternative, axiom, ( multiply(multiply(X,Y),Y) = multiply(X,multiply(Y,Y)) )).
+
+cnf(associator, axiom, ( associator(X,Y,Z) = add(multiply(multiply(X,Y),Z),additive_inverse(multiply(X,multiply(Y,Z)))) )).
+
+cnf(commutator, axiom, ( commutator(X,Y) = add(multiply(Y,X),additive_inverse(multiply(X,Y))) )).
+
+cnf(middle_associator, axiom, ( multiply(multiply(associator(X,X,Y),X),associator(X,X,Y)) = additive_identity )).
+

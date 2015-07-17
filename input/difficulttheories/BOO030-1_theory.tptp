@@ -1,0 +1,12 @@
+cnf(l1, axiom, ( add(X,multiply(Y,multiply(X,Z))) = X )).
+
+cnf(l3, axiom, ( add(add(multiply(X,Y),multiply(Y,Z)),Y) = Y )).
+
+cnf(b1, axiom, ( multiply(add(X,Y),add(X,inverse(Y))) = X )).
+
+cnf(majority1, axiom, ( multiply(add(multiply(X,Y),X),add(X,Y)) = X )).
+
+cnf(majority2, axiom, ( multiply(add(multiply(X,X),Y),add(X,X)) = X )).
+
+cnf(majority3, axiom, ( multiply(add(multiply(X,Y),Y),add(X,Y)) = Y )).
+

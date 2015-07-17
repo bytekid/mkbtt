@@ -1,0 +1,27 @@
+%--------------------------------------------------------------------------
+% File     : RNG042-2 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Ring Theory
+% Problem  : Ring theory (equality) axioms
+% Version  : [PS81] (equality) axioms :
+%            Reduced & Augmented > Complete.
+% English  : 
+
+% Refs     : [PS81]  Peterson & Stickel (1981), Complete Sets of Reductions
+% Source   : [ANL]
+% Names    : 
+
+% Status   : Satisfiable
+% Rating   : 0.00 v3.2.0, 0.33 v3.1.0, 0.00 v2.5.0
+% Syntax   : Number of clauses     :   14 (   0 non-Horn;  14 unit;   1 RR)
+%            Number of atoms       :   14 (  14 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    4 (   1 constant; 0-2 arity)
+%            Number of variables   :   25 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include Ring theory (equality) axioms
+include('Axioms/RNG002-0.ax').
+%--------------------------------------------------------------------------

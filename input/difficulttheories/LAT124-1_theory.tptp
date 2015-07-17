@@ -1,0 +1,4 @@
+cnf(equation_H32_dual, axiom, ( join(X,meet(Y,join(X,join(Z,U)))) = join(X,meet(Y,join(Z,meet(join(X,U),join(Y,U))))) )).
+
+include('Axioms/LAT001-0.ax').
+

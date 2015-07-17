@@ -1,0 +1,2 @@
+cnf(fond_bird_exists, hypothesis, ( response(a,b) = b )).
+

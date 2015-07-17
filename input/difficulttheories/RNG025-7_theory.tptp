@@ -1,0 +1,16 @@
+cnf(product_of_inverses, axiom, ( multiply(additive_inverse(X),additive_inverse(Y)) = multiply(X,Y) )).
+
+cnf(inverse_product1, axiom, ( multiply(additive_inverse(X),Y) = additive_inverse(multiply(X,Y)) )).
+
+cnf(inverse_product2, axiom, ( multiply(X,additive_inverse(Y)) = additive_inverse(multiply(X,Y)) )).
+
+cnf(distributivity_of_difference1, axiom, ( multiply(X,add(Y,additive_inverse(Z))) = add(multiply(X,Y),additive_inverse(multiply(X,Z))) )).
+
+cnf(distributivity_of_difference2, axiom, ( multiply(add(X,additive_inverse(Y)),Z) = add(multiply(X,Z),additive_inverse(multiply(Y,Z))) )).
+
+cnf(distributivity_of_difference3, axiom, ( multiply(additive_inverse(X),add(Y,Z)) = add(additive_inverse(multiply(X,Y)),additive_inverse(multiply(X,Z))) )).
+
+cnf(distributivity_of_difference4, axiom, ( multiply(add(X,Y),additive_inverse(Z)) = add(additive_inverse(multiply(X,Z)),additive_inverse(multiply(Y,Z))) )).
+
+include('Axioms/RNG003-0.ax').
+

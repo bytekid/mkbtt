@@ -1,0 +1,10 @@
+cnf(invertability1, axiom, ( join(complement(X),X) = n1 )).
+
+cnf(invertability2, axiom, ( meet(complement(X),X) = n0 )).
+
+cnf(invertability3, axiom, ( complement(complement(X)) = X )).
+
+cnf(modular_law, axiom, ( join(X,meet(Y,join(X,Z))) = meet(join(X,Y),join(X,Z)) )).
+
+include('Axioms/LAT001-0.ax').
+

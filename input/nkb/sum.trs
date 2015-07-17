@@ -1,0 +1,8 @@
+(VAR x y z)
+(THEORY (AC N))
+(RULES
+sum(L(x)) -> x
+sum(N(L(0),L(y))) -> y
+sum(N(L(s(x)),L(y))) -> s(sum(N(L(x),L(y))))
+sum(N(L(x),N(y,z))) -> sum(N(L(x),L(sum(N(y,z)))))
+)

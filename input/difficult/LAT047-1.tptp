@@ -1,0 +1,32 @@
+%--------------------------------------------------------------------------
+% File     : LAT047-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Lattice Theory
+% Problem  : Lattice is not modular lattice
+% Version  : [McC88] (equality) axioms.
+% English  : 
+
+% Refs     : [McC88] McCune (1988), Challenge Equality Problems in Lattice 
+%          : [RW01]  Rose & Wilkinson (2001), Application of Model Search
+% Source   : [RW01]
+% Names    : mace-b.in [RW01]
+
+% Status   : Satisfiable
+% Rating   : 0.33 v3.2.0, 0.67 v3.1.0, 0.33 v2.5.0
+% Syntax   : Number of clauses     :    9 (   0 non-Horn;   9 unit;   1 RR)
+%            Number of atoms       :    9 (   9 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :   16 (   2 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include lattice axioms 
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+%----Denial of modularity (7)
+cnf(prove_modularity,negated_conjecture,
+    (  join(a,meet(b,join(a,c))) != meet(join(a,b),join(a,c)) )).
+
+%--------------------------------------------------------------------------

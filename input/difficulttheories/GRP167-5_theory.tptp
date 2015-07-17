@@ -1,0 +1,14 @@
+cnf(p10, axiom, ( inverse(least_upper_bound(A,B)) = greatest_lower_bound(inverse(A),inverse(B)) )).
+
+cnf(lat4_1, axiom, ( positive_part(X) = least_upper_bound(X,identity) )).
+
+cnf(lat4_2, axiom, ( negative_part(X) = greatest_lower_bound(X,identity) )).
+
+cnf(lat4_3, axiom, ( least_upper_bound(X,greatest_lower_bound(Y,Z)) = greatest_lower_bound(least_upper_bound(X,Y),least_upper_bound(X,Z)) )).
+
+cnf(lat4_4, axiom, ( greatest_lower_bound(X,least_upper_bound(Y,Z)) = least_upper_bound(greatest_lower_bound(X,Y),greatest_lower_bound(X,Z)) )).
+
+include('Axioms/GRP004-0.ax').
+
+include('Axioms/GRP004-2.ax').
+

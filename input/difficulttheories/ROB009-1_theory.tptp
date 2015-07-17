@@ -1,0 +1,4 @@
+cnf(condition, hypothesis, ( negate(add(a,negate(add(b,c)))) = negate(add(b,negate(add(a,c)))) )).
+
+include('Axioms/ROB001-0.ax').
+

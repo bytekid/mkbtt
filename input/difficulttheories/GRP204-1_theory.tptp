@@ -1,0 +1,6 @@
+cnf(left_identity, axiom, ( multiply(identity,X) = X )).
+
+cnf(left_inverse, axiom, ( multiply(left_inverse(X),X) = identity )).
+
+cnf(moufang1, axiom, ( multiply(multiply(X,multiply(Y,Z)),X) = multiply(multiply(X,Y),multiply(Z,X)) )).
+

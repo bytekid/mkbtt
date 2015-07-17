@@ -1,0 +1,2 @@
+cnf(single_axiom, axiom, ( join(meet(join(meet(A,B),meet(B,join(A,B))),C),meet(join(meet(A,join(join(meet(D,B),meet(B,E)),B)),meet(join(meet(B,meet(meet(join(D,join(B,E)),join(F,B)),B)),meet(G,join(B,meet(meet(join(D,join(B,E)),join(F,B)),B)))),join(A,join(join(meet(D,B),meet(B,E))).
+

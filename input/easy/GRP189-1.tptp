@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : GRP189-1 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Group Theory (Lattice Ordered)
+% Problem  : Consequence of lattice theory
+% Version  : [Fuc94] (equality) axioms.
+% English  : 
+
+% Refs     : [Fuc94] Fuchs (1994), The Application of Goal-Orientated Heuri
+%          : [Sch95] Schulz (1995), Explanation Based Learning for Distribu
+% Source   : [TPTP]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.0.0
+% Syntax   : Number of clauses     :   16 (   0 non-Horn;  16 unit;   1 RR)
+%            Number of atoms       :   16 (  16 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   3 constant; 0-2 arity)
+%            Number of variables   :   33 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : ORDERING LPO greatest_lower_bound > least_upper_bound >
+%            inverse > product > identity > a > b
+%          : This is a standardized version of the problem that appears in
+%            [Sch95].
+% Bugfixes : v1.2.1 - Duplicate axioms in GRP004-2.ax removed.
+%--------------------------------------------------------------------------
+%----Include equality group theory axioms 
+include('Axioms/GRP004-0.ax').
+%----Include Lattice ordered group (equality) axioms
+include('Axioms/GRP004-2.ax').
+%--------------------------------------------------------------------------
+cnf(prove_p38b,negated_conjecture,
+    (  greatest_lower_bound(b,least_upper_bound(a,b)) != b )).
+
+%--------------------------------------------------------------------------

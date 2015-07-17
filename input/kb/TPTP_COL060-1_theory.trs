@@ -1,0 +1,6 @@
+(VAR x y z)
+(RULES
+apply(apply(apply(b,x),y),z) -> apply(x,apply(y,z)) 
+apply(apply(t,x),y) -> apply(y,x) 
+)
+

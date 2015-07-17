@@ -1,0 +1,39 @@
+%--------------------------------------------------------------------------
+% File     : RNG008-4 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Ring Theory
+% Problem  : Boolean rings are commutative
+% Version  : [PS81] (equality) axioms.
+%            Theorem formulation : Equality.
+% English  : Given a ring in which for all x, x * x = x, prove that for 
+%            all x and y, x * y = y * x.
+
+% Refs     : [MOW76] McCharen et al. (1976), Problems and Experiments for a
+%          : [PS81]  Peterson & Stickel (1981), Complete Sets of Reductions
+% Source   : [TPTP]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v3.3.0, 0.07 v3.1.0, 0.11 v2.7.0, 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.25 v2.0.0
+% Syntax   : Number of clauses     :   17 (   0 non-Horn;  17 unit;   3 RR)
+%            Number of atoms       :   17 (  17 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   26 (   2 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include ring theory axioms 
+include('Axioms/RNG002-0.ax').
+%--------------------------------------------------------------------------
+cnf(boolean_ring,hypothesis,
+    ( multiply(X,X) = X )).
+
+cnf(a_times_b_is_c,negated_conjecture,
+    ( multiply(a,b) = c )).
+
+cnf(prove_commutativity,negated_conjecture,
+    (  multiply(b,a) != c )).
+
+%--------------------------------------------------------------------------

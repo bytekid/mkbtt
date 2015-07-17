@@ -1,0 +1,10 @@
+cnf(associativity, axiom, ( multiply(multiply(V,W,X),Y,multiply(V,W,Z)) = multiply(V,W,multiply(X,Y,Z)) )).
+
+cnf(ternary_multiply_1, axiom, ( multiply(Y,X,X) = X )).
+
+cnf(ternary_multiply_2, axiom, ( multiply(X,X,Y) = X )).
+
+cnf(left_inverse, axiom, ( multiply(inverse(Y),Y,X) = X )).
+
+cnf(extra_lemma, axiom, ( multiply(X,Y,X) = X )).
+

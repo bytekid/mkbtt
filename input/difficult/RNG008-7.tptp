@@ -1,0 +1,42 @@
+%--------------------------------------------------------------------------
+% File     : RNG008-7 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Ring Theory
+% Problem  : Boolean rings are commutative
+% Version  : [LW91] (equality) axioms.
+% English  : Given a ring in which for all x, x * x = x, prove that for 
+%            all x and y, x * y = y * x.
+
+% Refs     : [LO85]  Lusk & Overbeek (1985), Reasoning about Equality
+%          : [Wos88] Wos (1988), Automated Reasoning - 33 Basic Research Pr
+%          : [LW91]  Lusk & Wos (1991), Benchmark Problems in Which Equalit
+% Source   : [LW91]
+% Names    : Problem 3 [LO85]
+%          : Test Problem 8 [Wos88]
+%          : Boolean Rings [Wos88]
+%          : RT1 [LW91]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v3.3.0, 0.07 v3.1.0, 0.11 v2.7.0, 0.00 v2.2.1, 0.22 v2.2.0, 0.29 v2.1.0, 0.25 v2.0.0
+% Syntax   : Number of clauses     :   12 (   0 non-Horn;  12 unit;   2 RR)
+%            Number of atoms       :   12 (  12 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   19 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : This is very similar to ring_x2.in [OTTER].
+%--------------------------------------------------------------------------
+%----Include ring theory axioms 
+include('Axioms/RNG005-0.ax').
+%--------------------------------------------------------------------------
+cnf(boolean_ring,hypothesis,
+    ( multiply(X,X) = X )).
+
+cnf(a_times_b_is_c,negated_conjecture,
+    ( multiply(a,b) = c )).
+
+cnf(prove_commutativity,negated_conjecture,
+    (  multiply(b,a) != c )).
+
+%--------------------------------------------------------------------------

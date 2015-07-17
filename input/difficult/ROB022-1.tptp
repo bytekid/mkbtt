@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------
+% File     : ROB022-1 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Robbins Algebra
+% Problem  : c + -c=c => Boolean
+% Version  : [Win90] (equality) axioms.
+% English  : If there is an element c such that c + -c = c then the 
+%            algebra is Boolean.
+
+% Refs     : [HMT71] Henkin et al. (1971), Cylindrical Algebras
+%          : [Win90] Winker (1990), Robbins Algebra: Conditions that make a
+%          : [McC92] McCune (1992), Email to G. Sutcliffe
+% Source   : [McC92]
+% Names    : - [McC92]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v3.4.0, 0.12 v3.3.0, 0.00 v2.2.1, 0.33 v2.2.0, 0.29 v2.1.0, 0.75 v2.0.0
+% Syntax   : Number of clauses     :    5 (   0 non-Horn;   5 unit;   2 RR)
+%            Number of atoms       :    5 (   5 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :    7 (   0 singleton)
+%            Maximal term depth    :    6 (   3 average)
+
+% Comments : Commutativity, associativity, and Huntington's axiom 
+%            axiomatize Boolean algebra.
+%--------------------------------------------------------------------------
+%----Include axioms for Robbins algebra 
+include('Axioms/ROB001-0.ax').
+%--------------------------------------------------------------------------
+cnf(condition,hypothesis,
+    ( add(c,negate(c)) = c )).
+
+cnf(prove_huntingtons_axiom,negated_conjecture,
+    (  add(negate(add(a,negate(b))),negate(add(negate(a),negate(b)))) != b )).
+
+%--------------------------------------------------------------------------

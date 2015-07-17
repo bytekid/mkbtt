@@ -1,0 +1,43 @@
+%--------------------------------------------------------------------------
+% File     : LAT090-1 : TPTP v3.6.0. Released v2.6.0.
+% Domain   : Lattice Theory (Weakly Associative Lattices)
+% Problem  : Absorption basis for WAL, part 3
+% Version  : [MP96] (equality) axioms : Especial.
+% English  : 
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+% Source   : [TPTP]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.6.0
+% Syntax   : Number of clauses     :    6 (   0 non-Horn;   6 unit;   1 RR)
+%            Number of atoms       :    6 (   6 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    3 (   1 constant; 0-2 arity)
+%            Number of variables   :   12 (   5 singleton)
+%            Maximal term depth    :    4 (   2 average)
+
+% Comments : A UEQ part of LAT029-1
+%--------------------------------------------------------------------------
+cnf(wal_absorbtion_1,axiom,
+    ( join(meet(A,B),meet(A,join(A,B))) = A )).
+
+cnf(wal_absorbtion_2,axiom,
+    ( join(meet(A,A),meet(B,join(A,A))) = A )).
+
+cnf(wal_absorbtion_3,axiom,
+    ( join(meet(A,B),meet(B,join(A,B))) = B )).
+
+cnf(wal_absorbtion_4,axiom,
+    ( meet(meet(join(A,B),join(C,A)),A) = A )).
+
+cnf(wal_absorbtion_5,axiom,
+    ( join(join(meet(A,B),meet(C,A)),A) = A )).
+
+cnf(prove_normal_axioms_3,negated_conjecture,
+    (  join(a,a) != a )).
+
+%--------------------------------------------------------------------------

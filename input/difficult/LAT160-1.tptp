@@ -1,0 +1,33 @@
+%------------------------------------------------------------------------------
+% File     : LAT160-1 : TPTP v3.6.0. Released v3.1.0.
+% Domain   : Lattice Theory
+% Problem  : Huntington equation H52 implies H51
+% Version  : [McC05] (equality) axioms : Especial.
+% English  : 
+
+% Refs     : [McC05] McCune (2005), Email to Geoff Sutcliffe
+% Source   : [McC05]
+% Names    : 
+
+% Status   : Unsatisfiable
+% Rating   : 0.56 v3.4.0, 0.50 v3.3.0, 0.64 v3.1.0
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   4 constant; 0-2 arity)
+%            Number of variables   :   20 (   2 singleton)
+%            Maximal term depth    :    6 (   3 average)
+
+% Comments : 
+%------------------------------------------------------------------------------
+%----Include Lattice theory (equality) axioms
+include('Axioms/LAT001-0.ax').
+%------------------------------------------------------------------------------
+cnf(equation_H52,axiom,
+    ( meet(X,join(Y,meet(Z,join(X,U)))) = meet(X,join(Y,join(meet(Z,U),meet(Z,join(X,Y))))) )).
+
+cnf(prove_H51,negated_conjecture,
+    (  meet(a,join(b,meet(c,join(a,d)))) != meet(a,join(b,join(meet(a,c),meet(c,d)))) )).
+
+%------------------------------------------------------------------------------

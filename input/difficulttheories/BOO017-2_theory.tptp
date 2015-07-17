@@ -1,0 +1,4 @@
+cnf(x_times_y, hypothesis, ( add(x,y) = z )).
+
+include('Axioms/BOO003-0.ax').
+

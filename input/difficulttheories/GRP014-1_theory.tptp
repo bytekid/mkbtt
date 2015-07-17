@@ -1,0 +1,2 @@
+cnf(group_axiom, axiom, ( multiply(X,inverse(multiply(multiply(inverse(multiply(inverse(Y),multiply(inverse(X),W))),Z),inverse(multiply(Y,Z))))) = W )).
+

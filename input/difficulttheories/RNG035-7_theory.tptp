@@ -1,0 +1,4 @@
+cnf(x_fourthed_is_x, hypothesis, ( multiply(X,multiply(X,multiply(X,X))) = X )).
+
+include('Axioms/RNG005-0.ax').
+

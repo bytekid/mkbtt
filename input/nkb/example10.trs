@@ -1,0 +1,5 @@
+(VAR x)
+(THEORY (AC p))
+(RULES
+p(a,x) -> p(b,g(a))
+)

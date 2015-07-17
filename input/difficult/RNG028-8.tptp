@@ -1,0 +1,34 @@
+%--------------------------------------------------------------------------
+% File     : RNG028-8 : TPTP v3.6.0. Released v1.0.0.
+% Domain   : Ring Theory (Alternative)
+% Problem  : Left Moufang identity
+% Version  : [Ste87] (equality) axioms.
+%            Theorem formulation : Associators.
+% English  : 
+
+% Refs     : [Ste87] Stevens (1987), Some Experiments in Nonassociative Rin
+%          : [Ste88] Stevens (1988), Challenge Problems from Nonassociative
+% Source   : [Ste87]
+% Names    : m2' [Ste87]
+
+% Status   : Unsatisfiable
+% Rating   : 0.78 v3.4.0, 0.75 v3.3.0, 0.86 v3.1.0, 0.89 v2.7.0, 0.91 v2.6.0, 0.83 v2.5.0, 0.75 v2.4.0, 0.67 v2.2.1, 1.00 v2.0.0
+% Syntax   : Number of clauses     :   16 (   0 non-Horn;  16 unit;   1 RR)
+%            Number of atoms       :   16 (  16 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    9 (   4 constant; 0-3 arity)
+%            Number of variables   :   27 (   2 singleton)
+%            Maximal term depth    :    5 (   2 average)
+
+% Comments : [Ste88] presents a slightly different set of axioms for proving
+%            this theorem. The axioms are so similar to those in RNG004.ax
+%            that a separate problems has not been created.
+%--------------------------------------------------------------------------
+%----Include nonassociative ring axioms 
+include('Axioms/RNG003-0.ax').
+%--------------------------------------------------------------------------
+cnf(prove_left_moufang,negated_conjecture,
+    (  associator(x,multiply(y,x),z) != multiply(x,associator(x,y,z)) )).
+
+%--------------------------------------------------------------------------

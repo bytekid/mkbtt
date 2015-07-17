@@ -1,0 +1,10 @@
+cnf(right_identity, axiom, ( multiply(X,identity) = X )).
+
+cnf(right_inverse, axiom, ( multiply(X,inverse(X)) = identity )).
+
+cnf(commutator, axiom, ( commutator(X,Y) = multiply(X,multiply(Y,multiply(inverse(X),inverse(Y)))) )).
+
+cnf(x_cubed_is_identity, hypothesis, ( multiply(X,multiply(X,X)) = identity )).
+
+include('Axioms/GRP004-0.ax').
+

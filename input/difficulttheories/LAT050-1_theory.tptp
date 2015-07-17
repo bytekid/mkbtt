@@ -1,0 +1,14 @@
+cnf(compatibility1, axiom, ( complement(join(X,Y)) = meet(complement(X),complement(Y)) )).
+
+cnf(compatibility2, axiom, ( complement(meet(X,Y)) = join(complement(X),complement(Y)) )).
+
+cnf(invertability1, axiom, ( join(complement(X),X) = n1 )).
+
+cnf(invertability2, axiom, ( meet(complement(X),X) = n0 )).
+
+cnf(invertability3, axiom, ( complement(complement(X)) = X )).
+
+cnf(orthomodular_law, axiom, ( join(X,meet(complement(X),join(X,Y))) = join(X,Y) )).
+
+include('Axioms/LAT001-0.ax').
+

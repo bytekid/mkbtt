@@ -1,0 +1,52 @@
+%--------------------------------------------------------------------------
+% File     : LAT054-1 : TPTP v3.6.0. Released v2.5.0.
+% Domain   : Lattice Theory
+% Problem  : Countermodel for Megill equation for ortholattices
+% Version  : [McC88] (equality) axioms.
+% English  : 
+
+% Refs     : [McC88] McCune (1988), Challenge Equality Problems in Lattice 
+%          : [Meg00] Megill & Pavicic (2000), Equations and State and Latti
+%          : [RW01]  Rose & Wilkinson (2001), Application of Model Search
+%          : [EF+02] Ernst et al. (2002), More First-order Test Problems in
+% Source   : [RW01]
+% Names    : sem-rw-2.in [RW01]
+%          : ol-rw2 [EF+02]
+
+% Status   : Satisfiable
+% Rating   : 0.33 v3.2.0, 0.67 v3.1.0, 0.33 v2.6.0, 0.67 v2.5.0
+% Syntax   : Number of clauses     :   14 (   0 non-Horn;  14 unit;   1 RR)
+%            Number of atoms       :   14 (  14 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    7 (   4 constant; 0-2 arity)
+%            Number of variables   :   23 (   2 singleton)
+%            Maximal term depth    :   10 (   3 average)
+
+% Comments : 
+%--------------------------------------------------------------------------
+%----Include lattice axioms 
+include('Axioms/LAT001-0.ax').
+%--------------------------------------------------------------------------
+%----Compatibility (6)
+cnf(compatibility1,axiom,
+    ( complement(join(X,Y)) = meet(complement(X),complement(Y)) )).
+
+cnf(compatibility2,axiom,
+    ( complement(meet(X,Y)) = join(complement(X),complement(Y)) )).
+
+%----Invertability (5)
+cnf(invertability1,axiom,
+    ( join(complement(X),X) = n1 )).
+
+cnf(invertability2,axiom,
+    ( meet(complement(X),X) = n0 )).
+
+cnf(invertability3,axiom,
+    ( complement(complement(X)) = X )).
+
+%----Denial of equation in question
+cnf(prove_this,negated_conjecture,
+    (  join(a,meet(complement(b),join(complement(a),meet(complement(b),join(a,meet(complement(b),complement(a))))))) != join(a,meet(complement(b),join(complement(a),meet(complement(b),join(a,meet(complement(b),join(complement(a),meet(complement(b),a)))))))) )).
+
+%--------------------------------------------------------------------------

@@ -1,0 +1,31 @@
+%--------------------------------------------------------------------------
+% File     : BOO005-4 : TPTP v3.6.0. Bugfixed v1.2.1.
+% Domain   : Boolean Algebra
+% Problem  : Addition is bounded (X + 1 = 1)
+% Version  : [Ver94] (equality) axioms.
+% English  : 
+
+% Refs     : [Ver94] Veroff (1994), Problem Set
+% Source   : [Ver94]
+% Names    : TB [Ver94]
+
+% Status   : Unsatisfiable
+% Rating   : 0.00 v2.0.0
+% Syntax   : Number of clauses     :    9 (   0 non-Horn;   9 unit;   1 RR)
+%            Number of atoms       :    9 (   9 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    6 (   3 constant; 0-2 arity)
+%            Number of variables   :   14 (   0 singleton)
+%            Maximal term depth    :    3 (   2 average)
+
+% Comments : 
+% Bugfixes : v1.2.1 - Clause prove_a_plus_1_is_a fixed.
+%--------------------------------------------------------------------------
+%----Include boolean algebra axioms for equality formulation 
+include('Axioms/BOO004-0.ax').
+%--------------------------------------------------------------------------
+cnf(prove_a_plus_1_is_a,negated_conjecture,
+    (  add(a,multiplicative_identity) != multiplicative_identity )).
+
+%--------------------------------------------------------------------------

@@ -1,0 +1,38 @@
+%--------------------------------------------------------------------------
+% File     : LAT022-1 : TPTP v3.6.0. Released v2.2.0.
+% Domain   : Lattice Theory (Quasilattices)
+% Problem  : Self-dual modularity for quasilattices.
+% Version  : [MP96] (equality) axioms.
+% English  : 
+
+% Refs     : [McC98] McCune (1998), Email to G. Sutcliffe
+%          : [MP96]  McCune & Padmanabhan (1996), Automated Deduction in Eq
+%          : [McC95] McCune (1995), Four Challenge Problems in Equational L
+% Source   : [McC98]
+% Names    : QLT-5 [MP96]
+%          : Problem C [McC95]
+
+% Status   : Unsatisfiable
+% Rating   : 0.11 v3.4.0, 0.12 v3.3.0, 0.21 v3.1.0, 0.22 v2.7.0, 0.09 v2.6.0, 0.00 v2.5.0, 0.25 v2.4.0, 0.33 v2.3.0, 0.67 v2.2.1
+% Syntax   : Number of clauses     :   10 (   0 non-Horn;  10 unit;   1 RR)
+%            Number of atoms       :   10 (  10 equality)
+%            Maximal clause size   :    1 (   1 average)
+%            Number of predicates  :    1 (   0 propositional; 2-2 arity)
+%            Number of functors    :    5 (   3 constant; 0-2 arity)
+%            Number of variables   :   21 (   0 singleton)
+%            Maximal term depth    :    4 (   3 average)
+
+% Comments :
+%--------------------------------------------------------------------------
+%----Include Quasilattice theory (equality) axioms
+include('Axioms/LAT004-0.ax').
+%--------------------------------------------------------------------------
+%----Self-dual modularity:
+cnf(self_dual_modularity,hypothesis,
+    ( join(meet(X,Y),meet(Z,join(X,Y))) = meet(join(X,Y),join(Z,meet(X,Y))) )).
+
+%----Denial of ordinary equational modularity:
+cnf(prove_modularity,negated_conjecture,
+    (  meet(a,join(b,meet(a,c))) != join(meet(a,b),meet(a,c)) )).
+
+%--------------------------------------------------------------------------

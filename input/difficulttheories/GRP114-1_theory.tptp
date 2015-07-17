@@ -1,0 +1,36 @@
+cnf(inverse_of_identity, axiom, ( inverse(identity) = identity )).
+
+cnf(inverse_involution, axiom, ( inverse(inverse(X)) = X )).
+
+cnf(inverse_product_lemma, axiom, ( inverse(multiply(X,Y)) = multiply(inverse(Y),inverse(X)) )).
+
+cnf(intersection_idempotent, axiom, ( intersection(X,X) = X )).
+
+cnf(union_idempotent, axiom, ( union(X,X) = X )).
+
+cnf(intersection_commutative, axiom, ( intersection(X,Y) = intersection(Y,X) )).
+
+cnf(union_commutative, axiom, ( union(X,Y) = union(Y,X) )).
+
+cnf(intersection_associative, axiom, ( intersection(X,intersection(Y,Z)) = intersection(intersection(X,Y),Z) )).
+
+cnf(union_associative, axiom, ( union(X,union(Y,Z)) = union(union(X,Y),Z) )).
+
+cnf(union_intersection_absorbtion, axiom, ( union(intersection(X,Y),Y) = Y )).
+
+cnf(intersection_union_absorbtion, axiom, ( intersection(union(X,Y),Y) = Y )).
+
+cnf(multiply_union1, axiom, ( multiply(X,union(Y,Z)) = union(multiply(X,Y),multiply(X,Z)) )).
+
+cnf(multiply_intersection1, axiom, ( multiply(X,intersection(Y,Z)) = intersection(multiply(X,Y),multiply(X,Z)) )).
+
+cnf(multiply_union2, axiom, ( multiply(union(Y,Z),X) = union(multiply(Y,X),multiply(Z,X)) )).
+
+cnf(multiply_intersection2, axiom, ( multiply(intersection(Y,Z),X) = intersection(multiply(Y,X),multiply(Z,X)) )).
+
+cnf(positive_part, axiom, ( positive_part(X) = union(X,identity) )).
+
+cnf(negative_part, axiom, ( negative_part(X) = intersection(X,identity) )).
+
+include('Axioms/GRP004-0.ax').
+
