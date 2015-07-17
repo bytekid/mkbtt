@@ -1,0 +1,3 @@
+#!/bin/bash
+./bin/ttt2 -s COMP -c comp.conf -cpf $1
+#./bin/ttt2 -s '(dp;(edg?; sccs?; (sc | lpo | kbo -ib 2 ))*)! | ((matrix -dim 2 -ib 2 -ob 2)*)' -cpf $1

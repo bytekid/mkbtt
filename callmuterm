@@ -1,0 +1,5 @@
+#!/bin/bash
+DIR=`pwd`
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/ami/swinkler/bin:.
+cd $DIR/muterm_files
+./muterm -i $1

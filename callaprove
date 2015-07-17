@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar AProVE.jar -u cli -m wst -t $2 $1

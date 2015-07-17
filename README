@@ -1,0 +1,162 @@
+Welcome to MKBtt!
+
+----------------------------------------------------------------------
+                                COMPILATION
+----------------------------------------------------------------------
+
+Before compiling, check if you have at least
+ - ocaml 3.10
+ - camlidl 1.05
+ - yices 1.11 headers and libs
+
+The following things may already be available on your machine:
+ - gcc-c++ (provides g++ 4.4.4)
+ - zlib-devel 
+ - glibc-static 2.12-1(if you compile static)
+
+To compile the libraries, type
+
+ $ make libs
+
+Afterwards, to compile MKBtt execute
+
+ $ make
+
+To run MKBtt, you may e.g. type 
+
+ $ ./mkbtt groups.trs
+
+----------------------------------------------------------------------
+                                 USAGE
+----------------------------------------------------------------------
+
+The following paragraphs describe the command-line interface of mkbTT. 
+The comman
+ ./mkbtt <file> <options> 
+calls mkbTT on a given file. Supported formats for input problems are
+
+    * the trs format used in TPDB up to version 5.*
+      (see http://www.lri.fr/~marche/tpdb/format.html)
+    * the newer xml format used in TPDB from version 7.* onwards
+      (see http://www.termination-portal.org/wiki/TPDB), and
+    * the TPTP3 format
+      (see http://www.cs.miami.edu/~tptp/TPTP/SyntaxBNF.html)
+
+Possible options include the following:
+
+
+GENERAL
+
+The global time limit is given by -t <seconds>. To control the output, 
+use -st, -ct and -p to obtain some statistics, the completed system, 
+and a proof of the saturation, respectively. The flag -h displays the 
+list of possible options and -v <n> controls the verbosity, where <n> 
+is a value between 0 and 3. Using -ch <file> a rewrite system can be 
+supplied to check whether it completes the theory. The settings for 
+termination checks have to be specified as described below.
+
+COMPLETION MODES
+
+Ordered completion can be applied via -o, normalized completion via -n.
+
+TERMINATION CHECKS
+
+By default, termination checks are performed internally using TTT2. 
+The applied termination techniques can be controlled with the option 
+-s <strategy>, specifying a strategy in the TTT2 language. Alterna-
+tively, termination can be checked externally if a suitable script is 
+supplied using the option -tp <script>. The script is supposed to be 
+executable from the current directory and it has to be compatible with 
+the following minimal interface:
+<script> <file> <timeout> is supposed to check termination of a given 
+system in TPDB format and print YES on the first line of standard 
+output if termination could be established. The parameter <timeout> 
+specifies a time limit in seconds for a termination check (if it is 
+ignored mkbTT just kills the process). Here are examples for such 
+scripts calling AProVe and muterm.
+With both internal and external termination, the time limit for each 
+termination check is specified by -T <seconds> .
+
+
+NODE SELECTION
+
+To control the selection of nodes, the option -ss <strategy> allows to 
+supply a selection strategy in mkbTT's strategy language. Predefined 
+strategies are 'max', 'slothrop' and 'sum'. The max strategy is used 
+by default.
+
+
+TERM INDEXING
+
+The term indexing technique used for variant and encompassment 
+retrievals in rewrite inferences can be specified via -ix <technique>, 
+where 'nv' corresponds to naive search in lists, 'pi' corresponds to 
+path indexing, 'dt' specifies discrimination trees and 'ct' 
+abbreviates code trees (the latter is applied by default). Besides, 
+an indexing technique for the retrieval of unifiable terms in deduce 
+steps can be specified via the option -ui <technique>. Here applicable 
+techniques include all of the above except code trees.
+
+CRITICAL PAIR CRITERIA
+
+By adding the flag -cp <cpc> a critical pair criterion can be selected 
+where <cpc> can be 'none' or have one of the values 'prime', 
+'blocked', 'connected' or 'all', denoting the criteria PCP, BCP, CCP 
+and all as outlined in the papers.
+
+ISOMORPHISMS
+
+The option -is <iso> is used to control process isomorphisms, where 
+<iso> may take the values 'rename' or 'rename+' to incorporate 
+checking for renamings, 'perm' or 'perm+' to check for argument 
+permutations, 'none' to suppress isomorphism checks or 'auto' to 
+heuristically choose a possibly applicable isomorphism at the 
+beginning of a run (the latter is used by default). A trailing + 
+indicates that checks are repeatedly performed in every iteration, and 
+not just when a process is split. 
+
+CERTIFICATION
+
+mkbTT can output XML proofs in CP format
+(see http://cl-informatik.uibk.ac.at/software/cpf/) which can be
+certified by CeTA (see http://cl-informatik.uibk.ac.at/software/ceta/).
+To this end, the script callcertify needs to be modified to output a 
+certifiable termination proof. 
+To obtain a certifiable completion proof, one can call mkbTT with option
+-cert as follows:
+ $ ./mkbtt input/kb/slothrop_equiv_proofs_or.trs -cert > proof.xml
+ $ ceta proof.xml
+
+In ordered completion mode, mkbTT can produce certifiable entailment
+(dis)proofs using -cert and -p <format>, where <format> is one of
+cpfconv (for conversions), cpfsub (for subsumption proofs with history),
+or cpftree (for equational proof trees):
+ $ ./mkbtt -o -cert -p cpfsub input/easy/GRP022-2.tptp > proof.xml
+ $ ceta proof.xml
+The format of disproofs is ndependent of the choice of <format>, e.g. in
+ $ ./mkbtt -o -cert -p cpfsub input/easy/BOO027-1.tptp > proof.xml
+ $ ceta proof.xml
+
+mkbTT has also some very basic theorem proving feature in normalized
+completion mode. For instance, CeTA certifies the following entailment 
+proof:
+ $ ./mkbtt -n -cert -p cpfsub input/certification/groups0.tptp -s acrpo > proof.xml
+ $ ceta proof.xml
+Please note that certification of entailment proofs requires CeTA >= 2.18.
+
+SPECIAL FEATURES
+
+mkbTT now (experimentally) supports pre-orientation of some equations.
+For this purpose, please create a file in TPDB format describing a 
+relative termination problem. For all strict rules the given 
+orientation is kept, while all weak rules are considered as equations
+and treated as usual input equalities. Note that mkbTT fails if
+termination of preoriented equations cannot be shown with the selected
+termination tool or strategy.
+
+
+For further information, please have a look at mkbTT's website:
+http://cl-informatik.uibk.ac.at/software/mkbtt
+
+If you have any further questions please contact
+sarah.winkler@uibk.ac.at
